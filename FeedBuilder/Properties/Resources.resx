@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="OpenIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OpenFile.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FileIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FileIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FTPAnimation5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FTPAnimation5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FTPAnimation1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FTPAnimation1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FTPDisconnected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FTPDisconnected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XMLIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\XMLIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AdditionalFeedData" xml:space="preserve">
+    <value>&lt;FeedInfo&gt;
+    &lt;Transform&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl"
+&gt;
+&lt;xsl:template match="/"&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;&lt;xsl:value-of select="//rss/channel/title"  disable-output-escaping="yes"/&gt;&lt;/h1&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;xsl:value-of select="//rss/channel/description" disable-output-escaping="yes"/&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;xsl:value-of select="//rss/channel/link"/&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;xsl:value-of select="//rss/channel/pubDate"/&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;table&gt;
+&lt;xsl:for-each select="//rss/channel/item"&gt;
+    &lt;xsl:variable name="enclosure-url" select="enclosure/@url"/&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;hr/&gt;
+            &lt;a href="{$enclosure-url}"&gt;&lt;xsl:value-of select="enclosure/@url"/&gt;&lt;xsl:value-of select="title" disable-output-escaping="yes"/&gt;&lt;/a&gt;&lt;br/&gt;
+            &lt;xsl:value-of select="description" disable-output-escaping="yes"/&gt;
+   &lt;/td&gt;&lt;/tr&gt;
+&lt;/xsl:for-each&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+]]&gt;
+&lt;/Transform&gt;
+    &lt;LocalFeedPath&gt;C:\users\me\myfeed.xml&lt;/LocalFeedPath&gt;
+    &lt;ValidationURL&gt;&lt;/ValidationURL&gt;
+    &lt;TimeZoneOffset&gt;0&lt;/TimeZoneOffset&gt;
+    &lt;FTPServerURL&gt;&lt;/FTPServerURL&gt;
+    &lt;FTPServerPath&gt;&lt;/FTPServerPath&gt;
+    &lt;FTPUsername&gt;&lt;/FTPUsername&gt;
+    &lt;FTPPassword&gt;&lt;/FTPPassword&gt;
+    &lt;LocalFeedImagePath&gt;&lt;/LocalFeedImagePath&gt;
+&lt;/FeedInfo&gt;</value>
+  </data>
+  <data name="FTPAnimation4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FTPAnimation4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedXsmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RedXsmall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FTPAnimation7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FTPAnimation7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FTPAnimation3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FTPAnimation3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FolderIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GreyXsmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GreyXsmall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FTPAnimation2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FTPAnimation2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FTPConnected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FTPConnected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TimeZones" xml:space="preserve">
+    <value>A|Alpha Time Zone|Military|UTC +01:00 hour|+1
+ADT|Atlantic Daylight Time|Atlantic|UTC -03:00 hours|-3
+ADT|Atlantic Daylight Time|North America|UTC -03:00 hours|-3
+AFT|Afghanistan Time|Asia|UTC +4:30 hours|+4.5
+AKDT|Alaska Daylight Time|North America|UTC -08:00 hours|-8
+AKST|Alaska Standard Time|North America|UTC -09:00 hours|-9
+ALMT|Alma-Ata Time|Asia|UTC +06:00 hours|+6
+AMST|Armenia Summer Time|Asia|UTC +05:00 hours|+5
+AMST|Amazon Summer Time|South America|UTC -03:00 hours|-3
+AMT|Armenia Time|Asia|UTC +04:00 hours|+4
+AMT|Amazon Time|South America|UTC -04:00 hours|-4
+ANAST|Anadyr Summer Time|Asia|UTC +12:00 hours|+12
+ANAT|Anadyr Time|Asia|UTC +12:00 hours|+12
+AQTT|Aqtobe Time|Asia|UTC +05:00 hours|+5
+ART|Argentina Time|South America|UTC -03:00 hours|-3
+AST|Arabia Standard Time|Asia|UTC +03:00 hours|+3
+AST|Atlantic Standard Time|Atlantic|UTC -04:00 hours|-4
+AST|Atlantic Standard Time|Caribbean|UTC -04:00 hours|-4
+AST|Atlantic Standard Time|North America|UTC -04:00 hours|-4
+AZOST|Azores Summer Time|Atlantic|UTC 00:00 hours|0
+AZOT|Azores Time|Atlantic|UTC -01:00 hour|-1
+AZST|Azerbaijan Summer Time|Asia|UTC +05:00 hours|+5
+AZT|Azerbaijan Time|Asia|UTC +04:00 hours|+4
+B|Bravo Time Zone|Military|UTC +02:00 hours|+2
+BNT|Brunei Darussalam Time|Asia|UTC +08:00 hours|+8
+BOT|Bolivia Time|South America|UTC -04:00 hours|-4
+BRST|Brasilia Summer Time|South America|UTC -02:00 hours|-2
+BRT|Brasília time|South America|UTC -03:00 hours|-3
+BST|Bangladesh Std Time|Asia|UTC +06:00 hours|+6
+BST|British Summer Time|Europe|UTC +01:00 hour|+1
+BTT|Bhutan Time|Asia|UTC +06:00 hours|+6
+C|Charlie Time Zone|Military|UTC +03:00 hours|+3
+CAST|Casey Time|Antarctica|UTC +08:00 hours|+8
+CAT|Central Africa Time|Africa|UTC +02:00 hours|+2
+CCT|Cocos Islands Time|Indian Ocean|UTC +06:30 hours|+6.5
+CDT|Central Daylight Time|Australia|UTC +10:30 hours|+10.5
+CDT|Cuba Daylight Time|Caribbean|UTC -04:00 hours|-4
+CDT|Central Daylight Time|North America|UTC -05:00 hours|-5
+CEST|Central European Summer Time|Europe|UTC +02:00 hours|+2
+CET|Central European Time|Africa|UTC +01:00 hour|+1
+CET|Central European Time|Europe|UTC +01:00 hour|+1
+CHADT|Chatham Island Daylight Time|Pacific|UTC +13:45 hours|+13.75
+CHAST|Chatham Island Standard Time|Pacific|UTC +12:45 hours|+12.75
+CKT|Cook Island Time|Pacific|UTC -10:00 hours|-10
+CLST|Chile Summer Time|South America|UTC -03:00 hours|-3
+CLT|Chile Standard Time|South America|UTC -04:00 hours|-4
+COT|Colombia Time|South America|UTC -05:00 hours|-5
+CST|China Standard Time|Asia|UTC +08:00 hours|+8
+CST|Central Standard Time|Australia|UTC +09:30 hours|+9.5
+CST|Central Standard Time|Central America|UTC -06:00 hours|-6
+CST|Cuba Standard Time|Caribbean|UTC -05:00 hours|-5
+CST|Central Standard Time|North America|UTC -06:00 hours|-6
+CVT|Cape Verde Time|Africa|UTC -01:00 hour|-1
+CXT|Christmas Island Time|Australia|UTC +07:00 hours|+7
+ChST|Chamorro Standard Time|Pacific|UTC +10:00 hours|+10
+D|Delta Time Zone|Military|UTC +04:00 hours|+4
+DAVT|Davis Time|Antarctica|UTC +07:00 hours|+7
+E|Echo Time Zone|Military|UTC +05:00 hours|+5
+EASST|Easter Island Summer |Pacific|UTC -05:00 hours|-5
+EAST|Easter Island Standard |Pacific|UTC -06:00 hours|-6
+EAT|Eastern Africa Time|Africa|UTC +03:00 hours|+3
+EAT|East Africa Time|Indian Ocean|UTC +03:00 hours|+3
+ECT|Ecuador Time|South America|UTC -05:00 hours|-5
+EDT|Eastern Daylight Time|Australia|UTC +11:00 hours|+11
+EDT|Eastern Daylight Time|Caribbean|UTC -04:00 hours|-4
+EDT|Eastern Daylight Time|North America|UTC -04:00 hours|-4
+EDT|Eastern Daylight Time|Pacific|UTC +11:00 hours|+11
+EEST|Eastern European Summer Time|Africa|UTC +03:00 hours|+3
+EEST|Eastern European Summer Time|Asia|UTC +03:00 hours|+3
+EEST|Eastern European Summer Time|Europe|UTC +03:00 hours|+3
+EET|Eastern European Time|Africa|UTC +02:00 hours|+2
+EET|Eastern European Time|Asia|UTC +02:00 hours|+2
+EET|Eastern European Time|Europe|UTC +02:00 hours|+2
+EGST|Eastern Greenlnd Summer |North America|UTC +00:00 hours|0
+EGT|East Greenland Time|North America|UTC -01:00 hour|-1
+EST|Eastern Standard Time|Australia|UTC +10:00 hours|+10
+EST|Eastern Standard Time|Central America|UTC -05:00 hours|-5
+EST|Eastern Standard Time|Caribbean|UTC -05:00 hours|-5
+EST|Eastern Standard Time|North America|UTC -05:00 hours|-5
+ET|Tiempo del Este|Central America|UTC -05:00 hours|-5
+ET|Tiempo del Este|Caribbean|UTC -05:00 hours|-5
+ET|Tiempo Del Este|North America|UTC -05:00 hours|-5
+F|Foxtrot Time Zone|Military|UTC +06:00 hours|+6
+FJST|Fiji Summer Time|Pacific|UTC +13:00 hours|+13
+FJT|Fiji Time|Pacific|UTC +12:00 hours|+12
+FKST|Falkland Islands Summer|South America|UTC -03:00 hours|-3
+FKT|Falkland Island Time|South America|UTC -04:00 hours|-4
+FNT|Fernando de Noronha |South America|UTC -02:00 hours|-2
+G|Golf Time Zone|Military|UTC +07:00 hours|+7
+GALT|Galapagos Time|Pacific|UTC -06:00 hours|-6
+GAMT|Gambier Time|Pacific|UTC -09:00 hours|-9
+GET|Georgia Standard Time|Asia|UTC +04:00 hours|+4
+GFT|French Guiana Time|South America|UTC -03:00 hours|-3
+GILT|Gilbert Island Time|Pacific|UTC +12:00 hours|+12
+GMT|Greenwich Mean Time|Africa|UTC +00:00 hours|0
+GMT|Greenwich Mean Time|Europe|UTC +00:00 hours|0
+GST|Gulf Standard Time|Asia|UTC +04:00 hours|+4
+GYT|Guyana Time|South America|UTC -04:00 hours|-4
+H|Hotel Time Zone|Military|UTC +08:00 hours|+8
+HAA|Heure Avancée de l'Atlantique|Atlantic|UTC -03:00 hours|-3
+HAA|Heure Avancée de l'Atlantique|North America|UTC -03:00 hours|-3
+HAC|Heure Avancée du Centre|North America|UTC -05:00 hours|-5
+HADT|Hawaii-Aleutian Daylight Time|North America|UTC -09:00 hours|-9
+HAE|Heure Avancée de l'Est|Caribbean|UTC -04:00 hours|-4
+HAE|Heure Avancée de l'Est|North America|UTC -04:00 hours|-4
+HAP|Heure Avancée du Pacifique|North America|UTC -07:00 hours|-7
+HAR|Heure Avancée des Rocheuses|North America|UTC -06:00 hours|-6
+HAST|Hawaii-Aleutian Standard Time|North America|UTC -10:00 hours|-10
+HAT|Heure Avancée de Terre-Neuve|North America|UTC -02:30 hours|-2.5
+HAY|Heure Avancée du Yukon|North America|UTC -08:00 hours|-8
+HKT|Hong Kong Time|Asia|UTC +08:00 hours|+8
+HLV|Hora Legal de Venezuela|South America|UTC -04:30 hours|-4.5
+HNA|Heure Normale de l'Atlantique|Atlantic|UTC -04:00 hours|-4
+HNA|Heure Normale de l'Atlantique|Caribbean|UTC -04:00 hours|-4
+HNA|Heure Normale de l'Atlantique|North America|UTC -04:00 hours|-4
+HNC|Heure Normale du Centre|Central America|UTC -06:00 hours|-6
+HNC|Heure Normale du Centre|North America|UTC -06:00 hours|-6
+HNE|Heure Normale de l'Est|Central America|UTC -05:00 hours|-5
+HNE|Heure Normale de l'Est|Caribbean|UTC -05:00 hours|-5
+HNE|Heure Normale de l'Est|North America|UTC -05:00 hours|-5
+HNP|Heure Normale du Pacifique|North America|UTC -08:00 hours|-8
+HNR|Heure Normale des Rocheuses|North America|UTC -07:00 hours|-7
+HNT|Heure Normale de Terre-Neuve|North America|UTC -03:30 hours|-3.5
+HNY|Heure Normale du Yukon|North America|UTC -09:00 hours|-9
+HOVT|Hovd Time|Asia|UTC +07:00 hours|+7
+I|India Time Zone|Military|UTC +09:00 hours|+9
+ICT|Indochina Time|Asia|UTC +07:00 hours|+7
+IDT|Israel Daylight Time|Asia|UTC +03:00 hours|+3
+IOT|Indian Chagos Time|Indian Ocean|UTC +06:00 hours|+6
+IRDT|Iran Daylight Time|Asia|UTC +04:30 hours|+4.5
+IRKST|Irkutsk Summer Time|Asia|UTC +09:00 hours|+9
+IRKT|Irkutsk Time|Asia|UTC +09:00 hours|+9
+IRST|Iran Standard Time|Asia|UTC +03:30 hours|+3.5
+IST|Israel Standard Time|Asia|UTC +02:00 hours|+2
+IST|India Standard Time|Asia|UTC +05:30 hours|+5.5
+IST|Irish Standard Time|Europe|UTC +01:00 hour|+1
+JST|Japan Standard Time|Asia|UTC +09:00 hours|+9
+K|Kilo Time Zone|Military|UTC +10:00 hours|+10
+KGT|Kyrgyzstan Time|Asia|UTC +06:00 hours|+6
+KRAST|Krasnoyarsk Summer Time|Asia|UTC +08:00 hours|+8
+KRAT|Krasnoyarsk Time|Asia|UTC +08:00 hours|+8
+KST|Korea Standard Time|Asia|UTC +09:00 hours|+9
+KUYT|Kuybyshev Time|Europe|UTC +04:00 hours|+4
+L|Lima Time Zone|Military|UTC +11:00 hours|+11
+LHDT|Lord Howe Daylight Time|Australia|UTC +11:00 hours|+11
+LHST|Lord Howe Standard Time|Australia|UTC +10:30 hours|+10.5
+LINT|Line Islands Time|Pacific|UTC +14:00 hours|+14
+M|Mike Time Zone|Military|UTC +12 hours|+12
+MAGST|Magadan Summer Time|Asia|UTC +12:00 hours|+12
+MAGT|Magadan Time|Asia|UTC +12:00 hours|+12
+MART|Marquesas Time|Pacific|UTC -09:30 hours|-9.5
+MAWT|Mawson Time|Antarctica|UTC +05:00 hours|+5
+MDT|Mountain Daylight Time|North America|UTC -06:00 hours|-6
+MESZ|Mitteleuropäische Sommerzeit|Europe|UTC +02:00 hours|+2
+MEZ|Mitteleuropäische Zeit|Africa|UTC +01:00 hour|+1
+MHT|Marshall Islands Time|Pacific|UTC +12:00 hours|+12
+MMT|Myanmar Time|Asia|UTC +06:30 hours|+6.5
+MSD|Moscow Daylight Time|Europe|UTC +04:00 hours|+4
+MSK|Moscow Standard Time|Europe|UTC +04:00 hours|+4
+MST|Mountain Standard Time|North America|UTC -07:00 hours|-7
+MUT|Mauritius Time|Africa|UTC +04:00 hours|+4
+MVT|Maldives Time|Asia|UTC +05:00 hours|+5
+MYT|Malaysia Time|Asia|UTC +08:00 hours|+8
+N|November Time Zone|Military|UTC -01:00 hour|-1
+NCT|New Caledonia Time|Pacific|UTC +11 hours|+11
+NDT|Newfoundland Daylight Time|North America|UTC -02:30 hours|-2.5
+NFT|Norfolk Time|Australia|UTC +11:30 hours|+11.5
+NOVST|Novosibirsk Summer Time|Asia|UTC +07:00 hours|+7
+NOVT|Novosibirsk Time|Asia|UTC +06:00 hours|+6
+NPT|Nepal Time|Asia|UTC +05:45 hours|+5.75
+NST|Newfoundland Standard Time|North America|UTC -03:30 hours|-3.5
+NUT|Niue Time|Pacific|UTC -11:00 hours|-11
+NZDT|New Zealand Daylight Time|Antarctica|UTC +13:00 hours|+13
+NZDT|New Zealand Daylight Time|Pacific|UTC +13:00 hours|+13
+NZST|New Zealand Standard Time|Antarctica|UTC +12:00 hours|+12
+NZST|New Zealand Standard Time|Pacific|UTC +12:00 hours|+12
+O|Oscar Time Zone|Military|UTC -02:00 hours|-2
+OMSST|Omsk Summer Time|Asia|UTC +07:00 hours|+7
+OMST|Omsk Standard Time|Asia|UTC +07:00 hours|+7
+P|Papa Time Zone|Military|UTC -03:00 hours|-3
+PDT|Pacific Daylight Time|North America|UTC -07:00 hours|-7
+PET|Peru Time|South America|UTC -05:00 hours|-5
+PETST|Kamchatka Summer Time|Asia|UTC +12:00 hours|+12
+PETT|Kamchatka Time|Asia|UTC +12:00 hours|+12
+PGT|Papua New Guinea Time|Pacific|UTC +10:00 hours|+10
+PHOT|Phoenix Island Time|Pacific|UTC +13:00 hours|+13
+PHT|Philippine Time|Asia|UTC +08:00 hours|+8
+PKT|Pakistan Standard Time|Asia|UTC +05:00 hours|+5
+PMDT|Pierre &amp; Miquelon Daylight Time|North America|UTC -02:00 hours|-2
+PMST|Pierre &amp; Miquelon Standard Time|North America|UTC -03:00 hours|-3
+PONT|Pohnpei Standard Time|Pacific|UTC +11:00 hours|+11
+PST|Pacific Standard Time|North America|UTC -08:00 hours|-8
+PST|Pitcairn Standard Time|Pacific|UTC -08:00 hours|-8
+PT|Tiempo del Pacífico|North America|UTC -08:00 hours|-8
+PWT|Palau Time|Pacific|UTC +09:00 hours|+9
+PYST|Paraguay Summer Time|South America|UTC -03:00 hours|-3
+PYT|Paraguay Time|South America|UTC -04:00 hours|-4
+Q|Quebec Time Zone|Military|UTC -04:00 hours|-4
+R|Romeo Time Zone|Military|UTC -05:00 hours|-5
+RET|Reunion Time|Africa|UTC +04:00 hours|+4
+S|Sierra Time Zone|Military|UTC -06:00 hours|-6
+SAMT|Samara Time|Europe|UTC +04:00 hours|+4
+SAST|South Africa Standard Time|Africa|UTC +02:00 hours|+2
+SBT|Solomon IslandsTime|Pacific|UTC +11:00 hours|+11
+SCT|Seychelles Time|Africa|UTC +04:00 hours|+4
+SGT|Singapore Time|Asia|UTC +08:00 hours|+8
+SRT|Suriname Time|South America|UTC -03:00 hours|-3
+SST|Samoa Standard Time|Pacific|UTC -11:00 hours|-11
+T|Tango Time Zone|Military|UTC -07:00 hours|-7
+TAHT|Tahiti Time|Pacific|UTC -10:00 hours|-10
+TFT|French Southern and Antarctic |Indian Ocean|UTC +05:00 hours|+5
+TJT|Tajikistan Time|Asia|UTC +05:00 hours|+5
+TKT|Tokelau Time|Pacific|UTC +13:00 hours|+13
+TLT|East Timor Time|Asia|UTC +09:00 hours|+9
+TMT|Turkmenistan Time|Asia|UTC +05:00 hours|+5
+TVT|Tuvalu Time|Pacific|UTC +12:00 hours|+12
+U|Uniform Time Zone|Military|UTC -08:00 hours|-8
+ULAT|Ulaanbaatar Time|Asia|UTC +08:00 hours|+8
+UYST|Uruguay Summer Time|South America|UTC -02:00 hours|-2
+UYT|Uruguay Time|South America|UTC -03:00 hours|-3
+UZT|Uzbekistan Time|Asia|UTC +05:00 hours|+5
+V|Victor Time Zone|Military|UTC -09:00 hours|-9
+VET|Venezuelan Standard Time|South America|UTC -04:30 hours|-4.5
+VLAST|Vladivostok Summer Time|Asia|UTC +11:00 hours|+11
+VLAT|Vladivostok Time|Asia|UTC +11:00 hours|+11
+VUT|Vanuatu Time|Pacific|UTC +11:00 hours|+11
+W|Whiskey Time Zone|Military|UTC -10:00 hours|-10
+WAST|West Africa Summer Time|Africa|UTC +02:00 hours|+2
+WAT|West Africa Time|Africa|UTC +01:00 hour|+1
+WDT|Western Daylight Time|Australia|UTC +09:00 hours|+9
+WEST|Western European Summer Time|Africa|UTC +01:00 hour|+1
+WEST|Western European Summer Time|Europe|UTC +01:00 hour|+1
+WESZ|Westeuropäische Sommerzeit|Africa|UTC +01:00 hour|+1
+WET|Western European Time|Africa|UTC +00:00 hours|0
+WET|Western European Time|Europe|UTC +00:00 hours|0
+WEZ|Westeuropäische Zeit|Europe|UTC +00:00 hours|0
+WFT|Wallis and Futuna Time|Pacific|UTC +12:00 hours|+12
+WGST|Western Greenland Summer Time|North America|UTC -02:00 hours|-2
+WGT|West Greenland Time|North America|UTC -03:00 hours|-3
+WIB|Western Indonesian Time|Asia|UTC +07:00 hours|+7
+WIT|Eastern Indonesian Time|Asia|UTC +09:00 hours|+9
+WITA|Central Indonesian Time|Asia|UTC +08:00 hours|+8
+WST|Western Sahara Summer Time|Africa|UTC +01:00 hour|+1
+WST|Western Standard Time|Australia|UTC +08:00 hours|+8
+WST|West Samoa Time|Pacific|UTC +13:00 hours|+13
+WT|Western Sahara Standard Time|Africa|UTC +00:00 hours|0
+X|X-ray Time Zone|Military|UTC -11:00 hours|-11
+Y|Yankee Time Zone|Military|UTC -12:00 hours|-12
+YAKST|Yakutsk Summer Time|Asia|UTC +10:00 hours|+10
+YAKT|Yakutsk Time|Asia|UTC +10:00 hours|+10
+YAPT|Yap Time|Pacific|UTC +10:00 hours|+10
+YEKST|Yekaterinburg Summer Time|Asia|UTC +06:00 hours|+6
+YEKT|Yekaterinburg Time|Asia|UTC +06:00 hours|+6
+Z|Zulu Time Zone|Military|UTC +00:00 hours|0</value>
+  </data>
+  <data name="Languages" xml:space="preserve">
+    <value>&lt;languages&gt;
+	&lt;language name="Afrikaans" code="af" /&gt;
+	&lt;language name="Albanian" code="sq" /&gt;
+	&lt;language name="Basque" code="eu" /&gt;
+	&lt;language name="Belarusian" code="be" /&gt;
+	&lt;language name="Bulgarian" code="bg" /&gt;
+	&lt;language name="Catalan" code="ca" /&gt;
+	&lt;language name="Chinese (Simplified)" code="zh-cn" /&gt;
+	&lt;language name="Chinese (Traditional)" code="zh-tw" /&gt;
+	&lt;language name="Croatian" code="hr" /&gt;
+	&lt;language name="Czech" code="cs" /&gt;
+	&lt;language name="Danish" code="da" /&gt;
+	&lt;language name="Dutch" code="nl" /&gt;
+	&lt;language name="Dutch (Belgium)" code="nl-be" /&gt;
+	&lt;language name="Dutch (Netherlands)" code="nl-nl" /&gt;
+	&lt;language name="English" code="en" /&gt;
+	&lt;language name="English (Australia)" code="en-au" /&gt;
+	&lt;language name="English (Belize)" code="en-bz" /&gt;
+	&lt;language name="English (Canada)" code="en-ca" /&gt;
+	&lt;language name="English (Ireland)" code="en-ie" /&gt;
+	&lt;language name="English (Jamaica)" code="en-jm" /&gt;
+	&lt;language name="English (New Zealand)" code="en-nz" /&gt;
+	&lt;language name="English (Phillipines)" code="en-ph" /&gt;
+	&lt;language name="English (South Africa)" code="en-za" /&gt;
+	&lt;language name="English (Trinidad)" code="en-tt" /&gt;
+	&lt;language name="English (United Kingdom)" code="en-gb" /&gt;
+	&lt;language name="English (United States)" code="en-us" /&gt;
+	&lt;language name="English (Zimbabwe)" code="en-zw" /&gt;
+	&lt;language name="Estonian" code=" et" /&gt;
+	&lt;language name="Faeroese" code="fo" /&gt;
+	&lt;language name="Finnish" code="fi" /&gt;
+	&lt;language name="French" code="fr" /&gt;
+	&lt;language name="French (Belgium)" code="fr-be" /&gt;
+	&lt;language name="French (Canada)" code="fr-ca" /&gt;
+	&lt;language name="French (France)" code="fr-fr" /&gt;
+	&lt;language name="French (Luxembourg)" code="fr-lu" /&gt;
+	&lt;language name="French (Monaco)" code="fr-mc" /&gt;
+	&lt;language name="French (Switzerland)" code="fr-ch" /&gt;
+	&lt;language name="Galician" code="gl" /&gt;
+	&lt;language name="Gaelic" code="gd" /&gt;
+	&lt;language name="German" code="de" /&gt;
+	&lt;language name="German (Austria)" code="de-at" /&gt;
+	&lt;language name="German (Germany)" code="de-de" /&gt;
+	&lt;language name="German (Liechtenstein)" code="de-li" /&gt;
+	&lt;language name="German (Luxembourg)" code="de-lu" /&gt;
+	&lt;language name="German (Switzerland)" code="de-ch" /&gt;
+	&lt;language name="Greek" code="el" /&gt;
+	&lt;language name="Hawaiian" code="haw" /&gt;
+	&lt;language name="Hungarian" code="hu" /&gt;
+	&lt;language name="Icelandic" code="is" /&gt;
+	&lt;language name="Indonesian" code="in" /&gt;
+	&lt;language name="Irish" code="ga" /&gt;
+	&lt;language name="Italian" code="it" /&gt;
+	&lt;language name="Italian (Italy)" code="it-it" /&gt;
+	&lt;language name="Italian (Switzerland)" code="it-ch" /&gt;
+	&lt;language name="Japanese" code="ja" /&gt;
+	&lt;language name="Korean" code="ko" /&gt;
+	&lt;language name="Macedonian" code="mk" /&gt;
+	&lt;language name="Norwegian" code="no" /&gt;
+	&lt;language name="Polish" code="pl" /&gt;
+	&lt;language name="Portuguese" code="pt" /&gt;
+	&lt;language name="Portuguese (Brazil)" code="pt-br" /&gt;
+	&lt;language name="Portuguese (Portugal)" code="pt-pt" /&gt;
+	&lt;language name="Romanian" code="ro" /&gt;
+	&lt;language name="Romanian (Moldova)" code="ro-mo" /&gt;
+	&lt;language name="Romanian (Romania)" code="ro-ro" /&gt;
+	&lt;language name="Russian" code="ru" /&gt;
+	&lt;language name="Russian (Moldova)" code="ru-mo" /&gt;
+	&lt;language name="Russian (Russia)" code="ru-ru" /&gt;
+	&lt;language name="Serbian" code="sr" /&gt;
+	&lt;language name="Slovak" code="sk" /&gt;
+	&lt;language name="Slovenian" code="sl" /&gt;
+	&lt;language name="Spanish" code="es" /&gt;
+	&lt;language name="Spanish (Argentina)" code="es-ar" /&gt;
+	&lt;language name="Spanish (Bolivia)" code="es-bo" /&gt;
+	&lt;language name="Spanish (Chile)" code="es-cl" /&gt;
+	&lt;language name="Spanish (Colombia)" code="es-co" /&gt;
+	&lt;language name="Spanish (Costa Rica)" code="es-cr" /&gt;
+	&lt;language name="Spanish (Dominican Republic)" code="es-do" /&gt;
+	&lt;language name="Spanish (Ecuador)" code="es-ec" /&gt;
+	&lt;language name="Spanish (El Salvador)" code="es-sv" /&gt;
+	&lt;language name="Spanish (Guatemala)" code="es-gt" /&gt;
+	&lt;language name="Spanish (Honduras)" code="es-hn" /&gt;
+	&lt;language name="Spanish (Mexico)" code="es-mx" /&gt;
+	&lt;language name="Spanish (Nicaragua)" code="es-ni" /&gt;
+	&lt;language name="Spanish (Panama)" code="es-pa" /&gt;
+	&lt;language name="Spanish (Paraguay)" code="es-py" /&gt;
+	&lt;language name="Spanish (Peru)" code="es-pe" /&gt;
+	&lt;language name="Spanish (Puerto Rico)" code="es-pr" /&gt;
+	&lt;language name="Spanish (Spain)" code="es-es" /&gt;
+	&lt;language name="Spanish (Uruguay)" code="es-uy" /&gt;
+	&lt;language name="Spanish (Venezuela)" code="es-ve" /&gt;
+	&lt;language name="Swedish" code="sv" /&gt;
+	&lt;language name="Swedish (Finland)" code="sv-fi" /&gt;
+	&lt;language name="Swedish (Sweden)" code="sv-se" /&gt;
+	&lt;language name="Turkish" code="tr" /&gt;
+	&lt;language name="Ukranian" code="uk" /&gt;
+&lt;/languages&gt;</value>
+  </data>
+  <data name="XSLTRemoveItunes" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+&lt;xsl:template match="/"&gt;
+&lt;rss xmlns:atom="http://www.w3.org/2005/Atom"&gt;
+&lt;channel&gt;
+
+    &lt;title&gt;&lt;xsl:value-of select="//rss/channel/title"/&gt;&lt;/title&gt;
+    &lt;description&gt;&lt;xsl:value-of select="//rss/channel/description"/&gt;&lt;/description&gt;
+    &lt;link&gt;&lt;xsl:value-of select="//rss/channel/description"/&gt;&lt;/link&gt;
+    &lt;language&gt;&lt;xsl:value-of select="//rss/channel/language"/&gt;&lt;/language&gt;
+    &lt;copyright&gt;&lt;xsl:value-of select="//rss/channel/copyright"/&gt;&lt;/copyright&gt;
+    &lt;lastBuildDate&gt;&lt;xsl:value-of select="//rss/channel/lastBuildDate"/&gt;&lt;/lastBuildDate&gt;
+    &lt;pubDate&gt;&lt;xsl:value-of select="//rss/channel/pubDate"/&gt;&lt;/pubDate&gt;
+    &lt;webMaster&gt;&lt;xsl:value-of select="//rss/channel/webMaster"/&gt;&lt;/webMaster&gt;
+
+    &lt;xsl:for-each select="//rss/channel/item"&gt;
+    &lt;xsl:variable name="enclosure-url" select="enclosure/@url"/&gt;
+    &lt;xsl:variable name="permalink" select="guid/@isPermaLink"/&gt;
+
+    &lt;item&gt;
+            &lt;title&gt;&lt;xsl:value-of select="title"/&gt;&lt;/title&gt;
+            &lt;description&gt;&lt;xsl:value-of select="description"/&gt;&lt;/description&gt;
+            &lt;link&gt;&lt;xsl:value-of select="link"/&gt;&lt;/link&gt;
+            &lt;enclosure url="{$enclosure-url}"&gt;&lt;/enclosure&gt;
+            &lt;guid isPermaLink="{$permalink}"&gt;&lt;xsl:value-of select="guid"/&gt;&lt;/guid&gt;
+            &lt;pubDate&gt;&lt;xsl:value-of select="pubDate"/&gt;&lt;/pubDate&gt;
+    &lt;/item&gt;
+
+&lt;/xsl:for-each&gt;
+&lt;/channel&gt;
+&lt;/rss&gt;
+&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</value>
+  </data>
+  <data name="DeleteIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PodcastTemplate" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;rss xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0"&gt;
+&lt;channel&gt;
+    &lt;title&gt;New Feed&lt;/title&gt;
+    &lt;description&gt;&lt;/description&gt;
+    &lt;link&gt;&lt;/link&gt;
+    &lt;language&gt;en-us&lt;/language&gt;
+    &lt;copyright&gt;&lt;/copyright&gt;
+    &lt;lastBuildDate&gt;&lt;/lastBuildDate&gt;
+    &lt;pubDate&gt;&lt;/pubDate&gt;
+    &lt;image&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;description&gt;&lt;/description&gt;
+        &lt;url&gt;&lt;/url&gt;
+        &lt;link&gt;&lt;/link&gt;
+    &lt;/image&gt;
+    &lt;webMaster&gt;&lt;/webMaster&gt;
+    &lt;itunes:author&gt;&lt;/itunes:author&gt;
+    &lt;itunes:subtitle&gt;&lt;/itunes:subtitle&gt;
+    &lt;itunes:summary&gt;&lt;/itunes:summary&gt;
+    &lt;itunes:duration&gt;&lt;/itunes:duration&gt;
+    &lt;itunes:owner&gt;
+        &lt;itunes:name&gt;&lt;/itunes:name&gt;
+        &lt;itunes:email&gt;&lt;/itunes:email&gt;
+    &lt;/itunes:owner&gt;
+    &lt;itunes:explicit&gt;&lt;/itunes:explicit&gt;
+	&lt;itunes:category text=""&gt;
+	&lt;itunes:category text=""/&gt;
+	&lt;/itunes:category&gt;
+	&lt;atom:link href="" rel="self" type="application/rss+xml" /&gt;
+&lt;/channel&gt;&lt;/rss&gt;</value>
+  </data>
+  <data name="NewItemTemplate" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;rss xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0"&gt;
+&lt;channel&gt;
+&lt;item&gt;
+&lt;title&gt;New Item&lt;/title&gt;
+&lt;description&gt;Newly created feed item.&lt;/description&gt;
+&lt;link&gt;&lt;/link&gt;
+&lt;enclosure url="" length="" type="audio/mpeg"&gt;&lt;/enclosure&gt;
+&lt;guid isPermaLink="false"&gt;&lt;/guid&gt;
+&lt;pubDate&gt;&lt;/pubDate&gt;
+&lt;itunes:subtitle&gt;&lt;/itunes:subtitle&gt;
+&lt;itunes:summary&gt;&lt;/itunes:summary&gt;
+&lt;itunes:duration&gt;&lt;/itunes:duration&gt;
+&lt;itunes:author&gt;&lt;/itunes:author&gt;
+&lt;itunes:explicit&gt;No&lt;/itunes:explicit&gt;
+&lt;/item&gt;
+&lt;/channel&gt;
+&lt;/rss&gt;</value>
+  </data>
+  <data name="FTPAnimation6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FTPAnimation6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XSLTAddItunes" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+&lt;xsl:template match="/"&gt;
+&lt;rss  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"&gt;
+&lt;channel&gt;
+
+    &lt;title&gt;&lt;xsl:value-of select="//rss/channel/title"/&gt;&lt;/title&gt;
+    &lt;description&gt;&lt;xsl:value-of select="//rss/channel/description"/&gt;&lt;/description&gt;
+    &lt;link&gt;&lt;xsl:value-of select="//rss/channel/description"/&gt;&lt;/link&gt;
+    &lt;language&gt;&lt;xsl:value-of select="//rss/channel/language"/&gt;&lt;/language&gt;
+    &lt;copyright&gt;&lt;xsl:value-of select="//rss/channel/copyright"/&gt;&lt;/copyright&gt;
+    &lt;lastBuildDate&gt;&lt;xsl:value-of select="//rss/channel/lastBuildDate"/&gt;&lt;/lastBuildDate&gt;
+    &lt;pubDate&gt;&lt;xsl:value-of select="//rss/channel/pubDate"/&gt;&lt;/pubDate&gt;
+    &lt;webMaster&gt;&lt;xsl:value-of select="//rss/channel/webMaster"/&gt;&lt;/webMaster&gt;
+    &lt;itunes:author&gt;&lt;/itunes:author&gt;
+    &lt;itunes:subtitle&gt;&lt;/itunes:subtitle&gt;
+    &lt;itunes:summary&gt;&lt;/itunes:summary&gt;
+    &lt;itunes:owner&gt;
+        &lt;itunes:name&gt;&lt;/itunes:name&gt;
+        &lt;itunes:email&gt;&lt;/itunes:email&gt;
+    &lt;/itunes:owner&gt;
+    &lt;itunes:explicit&gt;&lt;/itunes:explicit&gt;
+    &lt;itunes:category text=""&gt;
+    &lt;itunes:category text=""/&gt;
+    &lt;/itunes:category&gt;
+
+    &lt;xsl:for-each select="//rss/channel/item"&gt;
+    &lt;xsl:variable name="enclosure-url" select="enclosure/@url"/&gt;
+    &lt;xsl:variable name="permalink" select="guid/@isPermaLink"/&gt;
+
+    &lt;item&gt;
+            &lt;title&gt;&lt;xsl:value-of select="title"/&gt;&lt;/title&gt;
+            &lt;description&gt;&lt;xsl:value-of select="description"/&gt;&lt;/description&gt;
+            &lt;link&gt;&lt;xsl:value-of select="link"/&gt;&lt;/link&gt;
+            &lt;enclosure url="{$enclosure-url}"&gt;&lt;/enclosure&gt;
+            &lt;guid isPermaLink="{$permalink}"&gt;&lt;xsl:value-of select="guid"/&gt;&lt;/guid&gt;
+            &lt;pubDate&gt;&lt;xsl:value-of select="pubDate"/&gt;&lt;/pubDate&gt;
+             &lt;itunes:subtitle&gt;&lt;/itunes:subtitle&gt;
+            &lt;itunes:summary&gt;&lt;/itunes:summary&gt;
+            &lt;itunes:duration&gt;&lt;/itunes:duration&gt;
+            &lt;itunes:author&gt;&lt;/itunes:author&gt;
+            &lt;itunes:explicit&gt;&lt;/itunes:explicit&gt;
+   &lt;/item&gt;
+
+&lt;/xsl:for-each&gt;
+&lt;/channel&gt;
+&lt;/rss&gt;
+&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</value>
+  </data>
+  <data name="refresh_97252" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh_97252.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

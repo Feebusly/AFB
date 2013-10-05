@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14BDE43F-457C-4CB9-8C9B-89470D3EF909}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FeedBuilder</RootNamespace>
+    <AssemblyName>AnotherFeedBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>FeedBuilder.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AnotherFeedBuilder.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutImageForm.Designer.cs">
+      <DependentUpon>AboutImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeedData.cs" />
+    <Compile Include="FeedFileCache.cs" />
+    <Compile Include="FeedItem.cs" />
+    <Compile Include="FeedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeedForm.Designer.cs">
+      <DependentUpon>FeedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeedValidator.cs" />
+    <Compile Include="FileCacheEntry.cs" />
+    <Compile Include="FTP\BytesExtension.cs" />
+    <Compile Include="FTP\FolderBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FTP\FolderBrowser.designer.cs">
+      <DependentUpon>FolderBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FTP\FolderBrowserModel.cs" />
+    <Compile Include="FTP\FolderItems.cs" />
+    <Compile Include="FTP\FTPConnectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTP\FTPConnectForm.Designer.cs">
+      <DependentUpon>FTPConnectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FTP\FtpNodeTag.cs" />
+    <Compile Include="FTP\FTPServerInfo.cs" />
+    <Compile Include="FTP\FTPViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FTP\FTPViewer.Designer.cs">
+      <DependentUpon>FTPViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FTP\LocalFileFTPInfo.cs" />
+    <Compile Include="FTP\TextboxFTPTraceListener.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="ListboxRefresher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FTP\LocalFileViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FTP\LocalFileViewer.Designer.cs">
+      <DependentUpon>LocalFileViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MouseHoverResetListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NumberedTextBoxUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NumberedTextBoxUC.designer.cs">
+      <DependentUpon>NumberedTextBoxUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoundInfo.cs" />
+    <Compile Include="ValidationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValidationForm.Designer.cs">
+      <DependentUpon>ValidationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XMLDocRepair.cs" />
+    <EmbeddedResource Include="AboutImageForm.resx">
+      <DependentUpon>AboutImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeedForm.resx">
+      <DependentUpon>FeedForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTP\FolderBrowser.resx">
+      <DependentUpon>FolderBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTP\FTPConnectForm.resx">
+      <DependentUpon>FTPConnectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTP\FTPViewer.resx">
+      <DependentUpon>FTPViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTP\LocalFileViewer.resx">
+      <DependentUpon>LocalFileViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumberedTextBoxUC.resx">
+      <DependentUpon>NumberedTextBoxUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ValidationForm.resx">
+      <DependentUpon>ValidationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="FeedBuilder.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aga.Controls\Aga.Controls.csproj">
+      <Project>{E73BB233-D88B-44A7-A98F-D71EE158381D}</Project>
+      <Name>Aga.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MultiColumnCombo\CustomControls.csproj">
+      <Project>{2E3AC300-62B8-4812-A5F2-273281EAE4C7}</Project>
+      <Name>CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Net.FtpClient\System.Net.FtpClient.csproj">
+      <Project>{E963B766-56BF-4966-8917-88C1EE69D61A}</Project>
+      <Name>System.Net.FtpClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FTPDisconnected.png" />
+    <None Include="Resources\XMLIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenFile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FTPConnected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FTPAnimation1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FTPAnimation2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FTPAnimation3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FTPAnimation4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FTPAnimation5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FTPAnimation6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FTPAnimation7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedX.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedXsmall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreyXsmall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AnotherFeedBuilder.ico" />
+    <None Include="Resources\refresh_97252.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

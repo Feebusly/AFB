@@ -1,0 +1,52 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+	<PropertyGroup>
+		<!-- Select a Product Configuration -->
+		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
+		<!-- Select a Visual Studio Configuration / InstallShield Release -->
+		<Configuration>Debug</Configuration>
+		<InstallShieldRelease>$(Configuration)</InstallShieldRelease>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- The InstallShieldProject item selects the project to build -->
+		<InstallShieldProject Include="$(MSBuildProjectDirectory)\$(MSBuildProjectName).isl"/>
+		<!-- The InstallShieldReleaseFlags sets Release Flags -->
+		<!--<InstallShieldReleaseFlags Include=""/>-->
+		<!-- The InstallShieldMergeModulePath specifies what directories are
+		searched for Merge Modules -->
+		<!--<InstallShieldMergeModulePath Include=""/>-->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The ProjectReference items refer to any Visual Studio solutions you want to automatically probe for Project Output Groups.  -->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
+		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
+			<Name>My Test Project</Name>
+			<OutputGroup>Primary output</OutputGroup>
+			<TargetPath>My Test Exe.exe</TargetPath>
+		</TaggedOutputs> -->
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2012SpringLimited\InstallShield.targets"/>
+	<ItemGroup>
+		<ProjectReference Include="..\FeedBuilder\FeedBuilder.csproj">
+			<Name>FeedBuilder</Name>
+			<Project>{14BDE43F-457C-4CB9-8C9B-89470D3EF909}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\IdSharp.AudioInfo\IdSharp.AudioInfo.csproj">
+			<Name>IdSharp.AudioInfo</Name>
+			<Project>{136F9938-42FC-4C63-B76E-9DAAD3A63864}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\IdSharp.Common\IdSharp.Common.csproj">
+			<Name>IdSharp.Common</Name>
+			<Project>{1C83FB63-E16E-4380-9DD0-26E1799C417D}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\IdSharp.Tagging\IdSharp.Tagging.csproj">
+			<Name>IdSharp.Tagging</Name>
+			<Project>{A4BC39D2-FB08-4DCE-B485-0F49D21B106D}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\MWTreeView\MWTreeView.csproj">
+			<Name>MWTreeView</Name>
+			<Project>{45D59C6C-B3AE-4129-9952-E9CA8AC126C9}</Project>
+		</ProjectReference>
+	</ItemGroup>
+</Project>
