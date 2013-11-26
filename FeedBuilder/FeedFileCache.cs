@@ -65,19 +65,31 @@ namespace FeedBuilder
             {
                 Thread.Sleep(2000);
                 List<FileCacheEntry> removals = new List<FileCacheEntry>();
-                foreach (FileCacheEntry entry in mEntries)
+                //Use a for loop here instead of foreach. 
+                //foreach can cause a Collection modification error.
+                for (int i = 0; i < mEntries.Count; i++)
                 {
+                    FileCacheEntry entry = mEntries[i];
                     entry.CheckLink();
                     if (!entry.FileExists)
                     {
                         removals.Add(entry);
                     }
                 }
+                //foreach (FileCacheEntry entry in mEntries)
+                //{
+                    
+                //}
                 if (removals.Count > 0)
                 {
                     foreach (FileCacheEntry entry in removals)
                     {
                         mEntries.Remove(entry);
+                        string entryUserDataPath = FeedData.GetUserDataDirectory() + "\\" + entry.FileName;
+                        if (File.Exists(entryUserDataPath))
+                        {
+                            File.Delete(entryUserDataPath);
+                        }
                     }
                     FilesChanged();
                 }

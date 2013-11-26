@@ -115,23 +115,7 @@
             this.mMoveUpButton = new System.Windows.Forms.Button();
             this.mMoveDownButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.mItemsList = new FeedBuilder.ListboxRefresher();
             this.mItemTitle = new System.Windows.Forms.TextBox();
-            this.mMP3GroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.mGetMP3 = new System.Windows.Forms.Button();
-            this.mPutMP3 = new System.Windows.Forms.Button();
-            this.mPathLabel = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.mBrowseMP3Button = new System.Windows.Forms.Button();
-            this.mMP3Path = new System.Windows.Forms.TextBox();
-            this.mItemDuration = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.mItemPubDate = new System.Windows.Forms.DateTimePicker();
-            this.label31 = new System.Windows.Forms.Label();
-            this.mItemGUID = new System.Windows.Forms.TextBox();
-            this.mEnclosureUrl = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.mItemDescription = new System.Windows.Forms.TextBox();
@@ -139,6 +123,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.mItemSubtitle = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.mItemGUID = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.mItemLink = new System.Windows.Forms.TextBox();
             this.mItemSummary = new System.Windows.Forms.TextBox();
@@ -148,22 +133,27 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.mSearchLocalFiles = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mInsertButton = new System.Windows.Forms.Button();
             this.mDeleteButton = new System.Windows.Forms.Button();
             this.mDuplicateButton = new System.Windows.Forms.Button();
+            this.mMP3GroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.mPathLabel = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.mBrowseMP3Button = new System.Windows.Forms.Button();
+            this.mMP3Path = new System.Windows.Forms.TextBox();
+            this.mItemDuration = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.mItemPubDate = new System.Windows.Forms.DateTimePicker();
+            this.mEnclosureUrl = new System.Windows.Forms.TextBox();
             this.mXMLTab = new System.Windows.Forms.TabPage();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.mXmlText = new FeedBuilder.NumberedTextBoxUC();
-            this.mFindText = new System.Windows.Forms.TextBox();
-            this.mFindButton = new System.Windows.Forms.Button();
-            this.mResetXmlChanges = new System.Windows.Forms.Button();
-            this.mApplyXmlChanges = new System.Windows.Forms.Button();
             this.mXsltTab = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.label42 = new System.Windows.Forms.Label();
-            this.mXslt = new FeedBuilder.NumberedTextBoxUC();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.mTransformXml = new System.Windows.Forms.Button();
             this.mClearXsltOut = new System.Windows.Forms.Button();
@@ -176,7 +166,6 @@
             this.mConsoleTextbox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mLocalFileViewer = new FeedBuilder.LocalFileViewer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.mFTPImage = new System.Windows.Forms.PictureBox();
             this.mFtpStatusBar = new System.Windows.Forms.ProgressBar();
@@ -186,7 +175,6 @@
             this.mGetXMLFile = new System.Windows.Forms.Button();
             this.mConnect = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.mFTPViewer = new FeedBuilder.FTPViewer();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label43 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -199,6 +187,16 @@
             this.showXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xSLTransformToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mFtpDownloadWorker = new System.ComponentModel.BackgroundWorker();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.mFindText = new System.Windows.Forms.TextBox();
+            this.mFindButton = new System.Windows.Forms.Button();
+            this.mResetXmlChanges = new System.Windows.Forms.Button();
+            this.mApplyXmlChanges = new System.Windows.Forms.Button();
+            this.mItemsList = new FeedBuilder.ListboxRefresher();
+            this.mXmlText = new FeedBuilder.NumberedTextBoxUC();
+            this.mXslt = new FeedBuilder.NumberedTextBoxUC();
+            this.mLocalFileViewer = new FeedBuilder.LocalFileViewer();
+            this.mFTPViewer = new FeedBuilder.FTPViewer();
             ((System.ComponentModel.ISupportInitialize)(this.mErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
@@ -227,18 +225,14 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.mMP3GroupBox.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.mMP3GroupBox.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.mXMLTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
             this.mXsltTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel1.SuspendLayout();
@@ -264,6 +258,10 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.mContextMenuFileCache.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // mFTPUploadWorker
@@ -1126,7 +1124,6 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.mItemsList, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.mItemTitle, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.mMP3GroupBox, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.label17, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label33, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.mItemDescription, 2, 1);
@@ -1134,26 +1131,30 @@
             this.tableLayoutPanel1.Controls.Add(this.label28, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.mItemSubtitle, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label27, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.mItemGUID, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.label29, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.mItemLink, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.mItemSummary, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.label26, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.mItemAuthor, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.label22, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.splitContainer1, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.splitContainer1, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label31, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.mMP3GroupBox, 2, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowCount = 9;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -1161,17 +1162,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(785, 489);
             this.tableLayoutPanel1.TabIndex = 79;
-            // 
-            // mItemsList
-            // 
-            this.mItemsList.FormattingEnabled = true;
-            this.mItemsList.Location = new System.Drawing.Point(3, 29);
-            this.mItemsList.Name = "mItemsList";
-            this.tableLayoutPanel1.SetRowSpan(this.mItemsList, 6);
-            this.mItemsList.Size = new System.Drawing.Size(164, 303);
-            this.mItemsList.TabIndex = 81;
-            this.mItemsList.SelectedIndexChanged += new System.EventHandler(this.mItemsList_SelectedIndexChanged);
-            this.mItemsList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mItemsList_KeyPress);
             // 
             // mItemTitle
             // 
@@ -1181,190 +1171,6 @@
             this.mItemTitle.Size = new System.Drawing.Size(526, 20);
             this.mItemTitle.TabIndex = 6;
             this.mItemTitle.Leave += new System.EventHandler(this.mItemTitle_Leave);
-            // 
-            // mMP3GroupBox
-            // 
-            this.mMP3GroupBox.Controls.Add(this.tableLayoutPanel2);
-            this.mMP3GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mMP3GroupBox.Location = new System.Drawing.Point(256, 160);
-            this.mMP3GroupBox.Name = "mMP3GroupBox";
-            this.mMP3GroupBox.Size = new System.Drawing.Size(526, 147);
-            this.mMP3GroupBox.TabIndex = 75;
-            this.mMP3GroupBox.TabStop = false;
-            this.mMP3GroupBox.Text = "File Info";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.label20, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.mGetMP3, 3, 4);
-            this.tableLayoutPanel2.Controls.Add(this.mPutMP3, 2, 4);
-            this.tableLayoutPanel2.Controls.Add(this.mPathLabel, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.mBrowseMP3Button, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.mMP3Path, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.mItemDuration, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label32, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.mItemPubDate, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label31, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.mItemGUID, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.mEnclosureUrl, 1, 2);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(520, 128);
-            this.tableLayoutPanel2.TabIndex = 80;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(57, 57);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(29, 13);
-            this.label20.TabIndex = 81;
-            this.label20.Text = "URL";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // mGetMP3
-            // 
-            this.mGetMP3.Enabled = false;
-            this.mGetMP3.Location = new System.Drawing.Point(353, 101);
-            this.mGetMP3.Name = "mGetMP3";
-            this.mGetMP3.Size = new System.Drawing.Size(67, 23);
-            this.mGetMP3.TabIndex = 17;
-            this.mGetMP3.Text = "Get MP3";
-            this.mGetMP3.UseVisualStyleBackColor = true;
-            this.mGetMP3.Visible = false;
-            // 
-            // mPutMP3
-            // 
-            this.mPutMP3.Enabled = false;
-            this.mPutMP3.Location = new System.Drawing.Point(181, 101);
-            this.mPutMP3.Name = "mPutMP3";
-            this.mPutMP3.Size = new System.Drawing.Size(63, 23);
-            this.mPutMP3.TabIndex = 16;
-            this.mPutMP3.Text = "Put MP3";
-            this.mPutMP3.UseVisualStyleBackColor = true;
-            this.mPutMP3.Visible = false;
-            // 
-            // mPathLabel
-            // 
-            this.mPathLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.mPathLabel.AutoSize = true;
-            this.mPathLabel.Location = new System.Drawing.Point(28, 32);
-            this.mPathLabel.Name = "mPathLabel";
-            this.mPathLabel.Size = new System.Drawing.Size(58, 13);
-            this.mPathLabel.TabIndex = 78;
-            this.mPathLabel.Text = "Local Path";
-            this.mPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(4, 6);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(82, 13);
-            this.label14.TabIndex = 74;
-            this.label14.Text = "iTunes:Duration";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // mBrowseMP3Button
-            // 
-            this.mBrowseMP3Button.Enabled = false;
-            this.mBrowseMP3Button.Location = new System.Drawing.Point(92, 101);
-            this.mBrowseMP3Button.Name = "mBrowseMP3Button";
-            this.mBrowseMP3Button.Size = new System.Drawing.Size(83, 23);
-            this.mBrowseMP3Button.TabIndex = 15;
-            this.mBrowseMP3Button.Text = "Browse MP3";
-            this.mBrowseMP3Button.UseVisualStyleBackColor = true;
-            this.mBrowseMP3Button.Click += new System.EventHandler(this.mBrowseMP3Button_Click);
-            // 
-            // mMP3Path
-            // 
-            this.tableLayoutPanel2.SetColumnSpan(this.mMP3Path, 3);
-            this.mMP3Path.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mMP3Path.Location = new System.Drawing.Point(92, 29);
-            this.mMP3Path.Name = "mMP3Path";
-            this.mMP3Path.Size = new System.Drawing.Size(425, 20);
-            this.mMP3Path.TabIndex = 13;
-            this.mMP3Path.TabStop = false;
-            // 
-            // mItemDuration
-            // 
-            this.mItemDuration.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mItemDuration.Enabled = false;
-            this.mItemDuration.Location = new System.Drawing.Point(92, 3);
-            this.mItemDuration.Name = "mItemDuration";
-            this.mItemDuration.Size = new System.Drawing.Size(83, 20);
-            this.mItemDuration.TabIndex = 11;
-            this.mItemDuration.TabStop = false;
-            this.mItemDuration.Validating += new System.ComponentModel.CancelEventHandler(this.mItemDuration_Validating);
-            this.mItemDuration.Validated += new System.EventHandler(this.mItemDuration_Validated);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label32.Location = new System.Drawing.Point(262, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(85, 26);
-            this.label32.TabIndex = 38;
-            this.label32.Text = "Publication Date";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // mItemPubDate
-            // 
-            this.mItemPubDate.CustomFormat = "MM/dd/yyyy HH:mm:ss";
-            this.mItemPubDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.mItemPubDate.Location = new System.Drawing.Point(353, 3);
-            this.mItemPubDate.Name = "mItemPubDate";
-            this.mItemPubDate.Size = new System.Drawing.Size(156, 20);
-            this.mItemPubDate.TabIndex = 12;
-            this.mItemPubDate.ValueChanged += new System.EventHandler(this.mItemPubDate_ValueChanged_1);
-            // 
-            // label31
-            // 
-            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(52, 80);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(34, 13);
-            this.label31.TabIndex = 79;
-            this.label31.Text = "GUID";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // mItemGUID
-            // 
-            this.tableLayoutPanel2.SetColumnSpan(this.mItemGUID, 3);
-            this.mItemGUID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mItemGUID.Location = new System.Drawing.Point(92, 78);
-            this.mItemGUID.Name = "mItemGUID";
-            this.mItemGUID.Size = new System.Drawing.Size(425, 20);
-            this.mItemGUID.TabIndex = 14;
-            this.mItemGUID.TabStop = false;
-            // 
-            // mEnclosureUrl
-            // 
-            this.tableLayoutPanel2.SetColumnSpan(this.mEnclosureUrl, 3);
-            this.mEnclosureUrl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mEnclosureUrl.Location = new System.Drawing.Point(92, 55);
-            this.mEnclosureUrl.Name = "mEnclosureUrl";
-            this.mEnclosureUrl.Size = new System.Drawing.Size(425, 20);
-            this.mEnclosureUrl.TabIndex = 80;
-            this.mEnclosureUrl.Leave += new System.EventHandler(this.mEnclosureUrl_Leave);
             // 
             // label17
             // 
@@ -1401,11 +1207,11 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label18.Location = new System.Drawing.Point(216, 157);
+            this.label18.Location = new System.Drawing.Point(185, 157);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(34, 153);
+            this.label18.Size = new System.Drawing.Size(65, 130);
             this.label18.TabIndex = 76;
-            this.label18.Text = "Audio";
+            this.label18.Text = "Enclosure(s)";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label28
@@ -1439,13 +1245,22 @@
             this.label27.Text = "iTunes:Subtitle";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // mItemGUID
+            // 
+            this.mItemGUID.Dock = System.Windows.Forms.DockStyle.Top;
+            this.mItemGUID.Location = new System.Drawing.Point(256, 316);
+            this.mItemGUID.Name = "mItemGUID";
+            this.mItemGUID.Size = new System.Drawing.Size(526, 20);
+            this.mItemGUID.TabIndex = 14;
+            this.mItemGUID.TabStop = false;
+            // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label29.Location = new System.Drawing.Point(223, 310);
+            this.label29.Location = new System.Drawing.Point(223, 287);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(27, 33);
+            this.label29.Size = new System.Drawing.Size(27, 26);
             this.label29.TabIndex = 41;
             this.label29.Text = "Link";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1453,7 +1268,7 @@
             // mItemLink
             // 
             this.mItemLink.Dock = System.Windows.Forms.DockStyle.Top;
-            this.mItemLink.Location = new System.Drawing.Point(256, 313);
+            this.mItemLink.Location = new System.Drawing.Point(256, 290);
             this.mItemLink.Name = "mItemLink";
             this.mItemLink.Size = new System.Drawing.Size(526, 20);
             this.mItemLink.TabIndex = 18;
@@ -1502,9 +1317,8 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(256, 346);
+            this.splitContainer1.Location = new System.Drawing.Point(256, 342);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -1515,7 +1329,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label19);
             this.splitContainer1.Size = new System.Drawing.Size(526, 33);
-            this.splitContainer1.SplitterDistance = 58;
+            this.splitContainer1.SplitterDistance = 110;
             this.splitContainer1.TabIndex = 78;
             // 
             // mSearchLocalFiles
@@ -1523,9 +1337,9 @@
             this.mSearchLocalFiles.Enabled = false;
             this.mSearchLocalFiles.Location = new System.Drawing.Point(3, 3);
             this.mSearchLocalFiles.Name = "mSearchLocalFiles";
-            this.mSearchLocalFiles.Size = new System.Drawing.Size(53, 23);
+            this.mSearchLocalFiles.Size = new System.Drawing.Size(104, 23);
             this.mSearchLocalFiles.TabIndex = 77;
-            this.mSearchLocalFiles.Text = "Search";
+            this.mSearchLocalFiles.Text = "Find Local Paths";
             this.mSearchLocalFiles.UseVisualStyleBackColor = true;
             this.mSearchLocalFiles.Click += new System.EventHandler(this.mSearchLocalFiles_Click);
             // 
@@ -1534,16 +1348,27 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(3, 8);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(350, 13);
+            this.label19.Size = new System.Drawing.Size(358, 13);
             this.label19.TabIndex = 78;
-            this.label19.Text = "Examines each item link and searches for a corresponding local MP3 file.";
+            this.label19.Text = "Examines each enclosure URL and searches for a corresponding local file.";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label31.Location = new System.Drawing.Point(173, 313);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(77, 26);
+            this.label31.TabIndex = 79;
+            this.label31.Text = "GUID";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.mInsertButton);
             this.panel1.Controls.Add(this.mDeleteButton);
             this.panel1.Controls.Add(this.mDuplicateButton);
-            this.panel1.Location = new System.Drawing.Point(3, 346);
+            this.panel1.Location = new System.Drawing.Point(3, 342);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(164, 33);
             this.panel1.TabIndex = 79;
@@ -1580,6 +1405,143 @@
             this.mDuplicateButton.UseVisualStyleBackColor = true;
             this.mDuplicateButton.Click += new System.EventHandler(this.mDuplicateButton_Click);
             // 
+            // mMP3GroupBox
+            // 
+            this.mMP3GroupBox.Controls.Add(this.tableLayoutPanel2);
+            this.mMP3GroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.mMP3GroupBox.Location = new System.Drawing.Point(256, 160);
+            this.mMP3GroupBox.Name = "mMP3GroupBox";
+            this.mMP3GroupBox.Size = new System.Drawing.Size(526, 124);
+            this.mMP3GroupBox.TabIndex = 75;
+            this.mMP3GroupBox.TabStop = false;
+            this.mMP3GroupBox.Text = "Enclosure";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.label20, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.mPathLabel, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.mBrowseMP3Button, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.mMP3Path, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.mItemDuration, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label32, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.mItemPubDate, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.mEnclosureUrl, 1, 2);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(520, 105);
+            this.tableLayoutPanel2.TabIndex = 80;
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(57, 57);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(29, 13);
+            this.label20.TabIndex = 81;
+            this.label20.Text = "URL";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // mPathLabel
+            // 
+            this.mPathLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.mPathLabel.AutoSize = true;
+            this.mPathLabel.Location = new System.Drawing.Point(28, 32);
+            this.mPathLabel.Name = "mPathLabel";
+            this.mPathLabel.Size = new System.Drawing.Size(58, 13);
+            this.mPathLabel.TabIndex = 78;
+            this.mPathLabel.Text = "Local Path";
+            this.mPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(4, 6);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 13);
+            this.label14.TabIndex = 74;
+            this.label14.Text = "iTunes:Duration";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // mBrowseMP3Button
+            // 
+            this.mBrowseMP3Button.Enabled = false;
+            this.mBrowseMP3Button.Location = new System.Drawing.Point(92, 78);
+            this.mBrowseMP3Button.Name = "mBrowseMP3Button";
+            this.mBrowseMP3Button.Size = new System.Drawing.Size(92, 23);
+            this.mBrowseMP3Button.TabIndex = 15;
+            this.mBrowseMP3Button.Text = "Add Enclosure";
+            this.mBrowseMP3Button.UseVisualStyleBackColor = true;
+            this.mBrowseMP3Button.Click += new System.EventHandler(this.mBrowseMP3Button_Click);
+            // 
+            // mMP3Path
+            // 
+            this.tableLayoutPanel2.SetColumnSpan(this.mMP3Path, 3);
+            this.mMP3Path.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mMP3Path.Location = new System.Drawing.Point(92, 29);
+            this.mMP3Path.Name = "mMP3Path";
+            this.mMP3Path.Size = new System.Drawing.Size(425, 20);
+            this.mMP3Path.TabIndex = 13;
+            this.mMP3Path.TabStop = false;
+            // 
+            // mItemDuration
+            // 
+            this.mItemDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mItemDuration.Enabled = false;
+            this.mItemDuration.Location = new System.Drawing.Point(92, 3);
+            this.mItemDuration.Name = "mItemDuration";
+            this.mItemDuration.Size = new System.Drawing.Size(95, 20);
+            this.mItemDuration.TabIndex = 11;
+            this.mItemDuration.TabStop = false;
+            this.mItemDuration.Validating += new System.ComponentModel.CancelEventHandler(this.mItemDuration_Validating);
+            this.mItemDuration.Validated += new System.EventHandler(this.mItemDuration_Validated);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label32.Location = new System.Drawing.Point(262, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(85, 26);
+            this.label32.TabIndex = 38;
+            this.label32.Text = "Publication Date";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // mItemPubDate
+            // 
+            this.mItemPubDate.CustomFormat = "MM/dd/yyyy HH:mm:ss";
+            this.mItemPubDate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mItemPubDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.mItemPubDate.Location = new System.Drawing.Point(353, 3);
+            this.mItemPubDate.Name = "mItemPubDate";
+            this.mItemPubDate.Size = new System.Drawing.Size(156, 20);
+            this.mItemPubDate.TabIndex = 12;
+            this.mItemPubDate.ValueChanged += new System.EventHandler(this.mItemPubDate_ValueChanged_1);
+            // 
+            // mEnclosureUrl
+            // 
+            this.tableLayoutPanel2.SetColumnSpan(this.mEnclosureUrl, 3);
+            this.mEnclosureUrl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mEnclosureUrl.Location = new System.Drawing.Point(92, 55);
+            this.mEnclosureUrl.Name = "mEnclosureUrl";
+            this.mEnclosureUrl.Size = new System.Drawing.Size(425, 20);
+            this.mEnclosureUrl.TabIndex = 80;
+            this.mEnclosureUrl.Leave += new System.EventHandler(this.mEnclosureUrl_Leave);
+            // 
             // mXMLTab
             // 
             this.mXMLTab.Controls.Add(this.splitContainer3);
@@ -1590,77 +1552,6 @@
             this.mXMLTab.TabIndex = 4;
             this.mXMLTab.Text = "XML";
             this.mXMLTab.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.mXmlText);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.mFindText);
-            this.splitContainer3.Panel2.Controls.Add(this.mFindButton);
-            this.splitContainer3.Panel2.Controls.Add(this.mResetXmlChanges);
-            this.splitContainer3.Panel2.Controls.Add(this.mApplyXmlChanges);
-            this.splitContainer3.Size = new System.Drawing.Size(826, 489);
-            this.splitContainer3.SplitterDistance = 437;
-            this.splitContainer3.TabIndex = 1;
-            // 
-            // mXmlText
-            // 
-            this.mXmlText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mXmlText.Location = new System.Drawing.Point(0, 0);
-            this.mXmlText.Name = "mXmlText";
-            this.mXmlText.Size = new System.Drawing.Size(826, 437);
-            this.mXmlText.TabIndex = 2;
-            // 
-            // mFindText
-            // 
-            this.mFindText.Enabled = false;
-            this.mFindText.Location = new System.Drawing.Point(467, 5);
-            this.mFindText.Name = "mFindText";
-            this.mFindText.Size = new System.Drawing.Size(287, 20);
-            this.mFindText.TabIndex = 3;
-            this.mFindText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mFindText_KeyPress);
-            // 
-            // mFindButton
-            // 
-            this.mFindButton.Enabled = false;
-            this.mFindButton.Location = new System.Drawing.Point(760, 3);
-            this.mFindButton.Name = "mFindButton";
-            this.mFindButton.Size = new System.Drawing.Size(52, 23);
-            this.mFindButton.TabIndex = 2;
-            this.mFindButton.Text = "Find";
-            this.mFindButton.UseVisualStyleBackColor = true;
-            this.mFindButton.Click += new System.EventHandler(this.mFindButton_Click);
-            // 
-            // mResetXmlChanges
-            // 
-            this.mResetXmlChanges.Enabled = false;
-            this.mResetXmlChanges.Location = new System.Drawing.Point(112, 3);
-            this.mResetXmlChanges.Name = "mResetXmlChanges";
-            this.mResetXmlChanges.Size = new System.Drawing.Size(102, 23);
-            this.mResetXmlChanges.TabIndex = 1;
-            this.mResetXmlChanges.Text = "Reset Changes";
-            this.mResetXmlChanges.UseVisualStyleBackColor = true;
-            this.mResetXmlChanges.Click += new System.EventHandler(this.mResetXmlChanges_Click);
-            // 
-            // mApplyXmlChanges
-            // 
-            this.mApplyXmlChanges.Enabled = false;
-            this.mApplyXmlChanges.Location = new System.Drawing.Point(5, 3);
-            this.mApplyXmlChanges.Name = "mApplyXmlChanges";
-            this.mApplyXmlChanges.Size = new System.Drawing.Size(101, 23);
-            this.mApplyXmlChanges.TabIndex = 0;
-            this.mApplyXmlChanges.Text = "Apply Changes";
-            this.mApplyXmlChanges.UseVisualStyleBackColor = true;
-            this.mApplyXmlChanges.Click += new System.EventHandler(this.mApplyXmlChanges_Click);
             // 
             // mXsltTab
             // 
@@ -1719,14 +1610,6 @@
             this.label42.TabIndex = 0;
             this.label42.Text = "The XSLT code below will transform your xml feed into an html document.  Just hit" +
     " the Generate button.";
-            // 
-            // mXslt
-            // 
-            this.mXslt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mXslt.Location = new System.Drawing.Point(0, 0);
-            this.mXslt.Name = "mXslt";
-            this.mXslt.Size = new System.Drawing.Size(826, 212);
-            this.mXslt.TabIndex = 2;
             // 
             // splitContainer7
             // 
@@ -1875,15 +1758,6 @@
             this.panel2.Size = new System.Drawing.Size(306, 310);
             this.panel2.TabIndex = 0;
             // 
-            // mLocalFileViewer
-            // 
-            this.mLocalFileViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mLocalFileViewer.ItemChecked = false;
-            this.mLocalFileViewer.Location = new System.Drawing.Point(0, 0);
-            this.mLocalFileViewer.Name = "mLocalFileViewer";
-            this.mLocalFileViewer.Size = new System.Drawing.Size(306, 310);
-            this.mLocalFileViewer.TabIndex = 27;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.mFTPImage);
@@ -1974,15 +1848,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(306, 310);
             this.panel4.TabIndex = 2;
-            // 
-            // mFTPViewer
-            // 
-            this.mFTPViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mFTPViewer.Location = new System.Drawing.Point(0, 0);
-            this.mFTPViewer.Name = "mFTPViewer";
-            this.mFTPViewer.ServerInfo = null;
-            this.mFTPViewer.Size = new System.Drawing.Size(306, 310);
-            this.mFTPViewer.TabIndex = 26;
             // 
             // panel7
             // 
@@ -2085,6 +1950,115 @@
             this.mFtpDownloadWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.mFtpDownloadWorker_ProgressChanged);
             this.mFtpDownloadWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.mFtpDownloadWorker_RunWorkerCompleted);
             // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.mXmlText);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.mFindText);
+            this.splitContainer3.Panel2.Controls.Add(this.mFindButton);
+            this.splitContainer3.Panel2.Controls.Add(this.mResetXmlChanges);
+            this.splitContainer3.Panel2.Controls.Add(this.mApplyXmlChanges);
+            this.splitContainer3.Size = new System.Drawing.Size(826, 489);
+            this.splitContainer3.SplitterDistance = 437;
+            this.splitContainer3.TabIndex = 1;
+            // 
+            // mFindText
+            // 
+            this.mFindText.Enabled = false;
+            this.mFindText.Location = new System.Drawing.Point(467, 5);
+            this.mFindText.Name = "mFindText";
+            this.mFindText.Size = new System.Drawing.Size(287, 20);
+            this.mFindText.TabIndex = 3;
+            this.mFindText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mFindText_KeyPress);
+            // 
+            // mFindButton
+            // 
+            this.mFindButton.Enabled = false;
+            this.mFindButton.Location = new System.Drawing.Point(760, 3);
+            this.mFindButton.Name = "mFindButton";
+            this.mFindButton.Size = new System.Drawing.Size(52, 23);
+            this.mFindButton.TabIndex = 2;
+            this.mFindButton.Text = "Find";
+            this.mFindButton.UseVisualStyleBackColor = true;
+            this.mFindButton.Click += new System.EventHandler(this.mFindButton_Click);
+            // 
+            // mResetXmlChanges
+            // 
+            this.mResetXmlChanges.Enabled = false;
+            this.mResetXmlChanges.Location = new System.Drawing.Point(112, 3);
+            this.mResetXmlChanges.Name = "mResetXmlChanges";
+            this.mResetXmlChanges.Size = new System.Drawing.Size(102, 23);
+            this.mResetXmlChanges.TabIndex = 1;
+            this.mResetXmlChanges.Text = "Reset Changes";
+            this.mResetXmlChanges.UseVisualStyleBackColor = true;
+            this.mResetXmlChanges.Click += new System.EventHandler(this.mResetXmlChanges_Click);
+            // 
+            // mApplyXmlChanges
+            // 
+            this.mApplyXmlChanges.Enabled = false;
+            this.mApplyXmlChanges.Location = new System.Drawing.Point(5, 3);
+            this.mApplyXmlChanges.Name = "mApplyXmlChanges";
+            this.mApplyXmlChanges.Size = new System.Drawing.Size(101, 23);
+            this.mApplyXmlChanges.TabIndex = 0;
+            this.mApplyXmlChanges.Text = "Apply Changes";
+            this.mApplyXmlChanges.UseVisualStyleBackColor = true;
+            this.mApplyXmlChanges.Click += new System.EventHandler(this.mApplyXmlChanges_Click);
+            // 
+            // mItemsList
+            // 
+            this.mItemsList.FormattingEnabled = true;
+            this.mItemsList.Location = new System.Drawing.Point(3, 29);
+            this.mItemsList.Name = "mItemsList";
+            this.tableLayoutPanel1.SetRowSpan(this.mItemsList, 7);
+            this.mItemsList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.mItemsList.Size = new System.Drawing.Size(164, 303);
+            this.mItemsList.TabIndex = 81;
+            this.mItemsList.SelectedIndexChanged += new System.EventHandler(this.mItemsList_SelectedIndexChanged);
+            this.mItemsList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mItemsList_KeyPress);
+            // 
+            // mXmlText
+            // 
+            this.mXmlText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mXmlText.Location = new System.Drawing.Point(0, 0);
+            this.mXmlText.Name = "mXmlText";
+            this.mXmlText.Size = new System.Drawing.Size(826, 437);
+            this.mXmlText.TabIndex = 2;
+            // 
+            // mXslt
+            // 
+            this.mXslt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mXslt.Location = new System.Drawing.Point(0, 0);
+            this.mXslt.Name = "mXslt";
+            this.mXslt.Size = new System.Drawing.Size(826, 212);
+            this.mXslt.TabIndex = 2;
+            // 
+            // mLocalFileViewer
+            // 
+            this.mLocalFileViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mLocalFileViewer.ItemChecked = false;
+            this.mLocalFileViewer.Location = new System.Drawing.Point(0, 0);
+            this.mLocalFileViewer.Name = "mLocalFileViewer";
+            this.mLocalFileViewer.Size = new System.Drawing.Size(306, 310);
+            this.mLocalFileViewer.TabIndex = 27;
+            // 
+            // mFTPViewer
+            // 
+            this.mFTPViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mFTPViewer.Location = new System.Drawing.Point(0, 0);
+            this.mFTPViewer.Name = "mFTPViewer";
+            this.mFTPViewer.ServerInfo = null;
+            this.mFTPViewer.Size = new System.Drawing.Size(306, 310);
+            this.mFTPViewer.TabIndex = 26;
+            // 
             // FeedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2134,21 +2108,16 @@
             this.splitContainer2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.mMP3GroupBox.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.mMP3GroupBox.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.mXMLTab.ResumeLayout(false);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            this.splitContainer3.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
             this.mXsltTab.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel2.ResumeLayout(false);
@@ -2180,6 +2149,11 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.mContextMenuFileCache.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2215,15 +2189,12 @@
         private System.Windows.Forms.Button mDuplicateButton;
         private System.Windows.Forms.GroupBox mMP3GroupBox;
         private System.Windows.Forms.Label mPathLabel;
-        private System.Windows.Forms.Button mPutMP3;
-        private System.Windows.Forms.Button mGetMP3;
         private System.Windows.Forms.TextBox mMP3Path;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox mItemDuration;
         private System.Windows.Forms.DateTimePicker mItemPubDate;
         private System.Windows.Forms.Button mBrowseMP3Button;
-        private System.Windows.Forms.TextBox mItemGUID;
         private System.Windows.Forms.Button mInsertButton;
         private System.Windows.Forms.Button mMoveDownButton;
         private System.Windows.Forms.Button mMoveUpButton;
@@ -2362,6 +2333,7 @@
         private System.Windows.Forms.ContextMenuStrip mContextMenuFileCache;
         private System.Windows.Forms.ToolStripMenuItem removeFromListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openInExplorerToolStripMenuItem;
+        private System.Windows.Forms.TextBox mItemGUID;
        
     }
 }

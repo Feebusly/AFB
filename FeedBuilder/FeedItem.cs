@@ -577,7 +577,7 @@ namespace FeedBuilder
             }
         }
 
-        public string SoundFileName
+        public string EnclosureName
         {
             get
             {
@@ -591,7 +591,7 @@ namespace FeedBuilder
             }
         }
 
-        public string SoundFilePath
+        public string EnclosurePath
         {
             get
             {

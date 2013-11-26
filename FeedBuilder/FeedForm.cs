@@ -717,15 +717,13 @@ namespace FeedBuilder
                     mItemAuthor.Text = selectedNode.Author;
                 }
 
-                mMP3Path.Text = selectedNode.SoundFilePath;
+                mMP3Path.Text = selectedNode.EnclosurePath;
                 if (mMP3Path.Text == null  || mMP3Path.Text == "")
                     mMP3Path.Text = "{unknown}";
 
                 mItemGUID.Text = selectedNode.GUID;
 
                 mBrowseMP3Button.Enabled = true;
-                mGetMP3.Enabled = true;
-                mPutMP3.Enabled = true;
 
                 mRefreshing = false;
             }
@@ -775,15 +773,25 @@ namespace FeedBuilder
 
         private void mDeleteButton_Click(object sender, EventArgs e)
         {
-            int currentLocation = mItemsList.SelectedIndex; 
-            FeedItem deleteItem = mItemsList.SelectedItem as FeedItem;
-            mFeedData.RemoveFeedItem(deleteItem);
+            int currentLocation = mItemsList.SelectedIndex;
+            foreach (object item in mItemsList.SelectedItems)
+            {
+                FeedItem deleteItem = item as FeedItem;
+                mFeedData.RemoveFeedItem(deleteItem);
+                mFeedData.Dirty = true;
+            }
             RefreshForm();
-            if (currentLocation >= mItemsList.Items.Count)
+            if (currentLocation > mItemsList.Items.Count)
+            {
+                currentLocation = mItemsList.Items.Count;
+            }
+            else if (currentLocation > 0)
             {
                 --currentLocation;
             }
-            mItemsList.SetSelected(currentLocation, true);
+            mItemsList.ClearSelected();
+            if (mItemsList.Items != null && mItemsList.Items.Count > 0)
+                mItemsList.SetSelected(currentLocation, true);
         }
 
         private void mInsertButton_Click(object sender, EventArgs e)
@@ -857,7 +865,7 @@ namespace FeedBuilder
                         currentItem.GUID = newGUID;
 
                         //Filename
-                        currentItem.SoundFilePath = fileChooser.FileName;
+                        currentItem.EnclosurePath = fileChooser.FileName;
                         mMP3Path.Text = fileChooser.FileName;
 
                         mItemPubDate.Enabled = true;
@@ -1763,7 +1771,7 @@ namespace FeedBuilder
                         {
                             soundFilePath = LocateSoundFile(folderPath, fileName);
                         }
-                        item.SoundFilePath = soundFilePath;
+                        item.EnclosurePath = soundFilePath;
                     }
                 }
                 RefreshForm();
@@ -2221,7 +2229,7 @@ namespace FeedBuilder
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
             }
         }
 

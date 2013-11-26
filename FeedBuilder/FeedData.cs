@@ -1380,7 +1380,7 @@ namespace FeedBuilder
                 if ((guidNode = mAdditionalFeedDataXml.SelectSingleNode(additionalDataGuidXpath)) != null)
                 {
                     XmlNode soundFilePath = guidNode.ParentNode.SelectSingleNode("SoundFilePath");
-                    soundFilePath.InnerText = feedItem.SoundFilePath;
+                    soundFilePath.InnerText = feedItem.EnclosurePath;
                 }
             }
         }
@@ -1567,9 +1567,9 @@ namespace FeedBuilder
 
         public void SaveAs(string newFilePath)
         {
-            mAdditionalFeedDataXml.SelectSingleNode(LOCAL_FEED_PATH_XPATH).InnerText = newFilePath;
-            mAdditionalFeedDataXml.Save(newFilePath);
-            mAdditionalFeedDataPath = newFilePath;
+            mAdditionalFeedDataPath = GetLocalDataPath(newFilePath);
+            mAdditionalFeedDataXml.SelectSingleNode(LOCAL_FEED_PATH_XPATH).InnerText = mAdditionalFeedDataPath;
+            mAdditionalFeedDataXml.Save(mAdditionalFeedDataPath);
             mFeedDocument.Save(newFilePath);
             FeedPath = newFilePath;
             this.Dirty = false;

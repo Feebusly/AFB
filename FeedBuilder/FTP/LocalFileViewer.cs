@@ -135,12 +135,12 @@ namespace FeedBuilder
             {
                 foreach (FeedItem feedItem in mFeedData.FeedItems)
                 {
-                    if (feedItem.SoundFilePath != null)
+                    if (feedItem.EnclosurePath != null)
                     {
-                        string nodeText = string.Format("{0} : {1}", feedItem.Title, feedItem.SoundFileName);
+                        string nodeText = string.Format("{0} : {1}", feedItem.Title, feedItem.EnclosureName);
                         Node contentNode = new Node(nodeText);
                         mp3sNode.Nodes.Add(contentNode);
-                        contentNode.Tag = new FtpNodeTag(NodeTypes.ContentNode, feedItem.SoundFilePath);
+                        contentNode.Tag = new FtpNodeTag(NodeTypes.ContentNode, feedItem.EnclosurePath);
                     }
                 }
             }
