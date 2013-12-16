@@ -100,7 +100,7 @@ namespace FeedBuilder
             fileNodeChild.Tag = new FtpNodeTag(fileNodeType, mFeedData.FeedPath);
             foreach (FeedItem item in mFeedData.FeedItems)
             {
-                Node itemNode = new Node(item.Title);
+                Node itemNode = new Node(item.Title + " : " + item.PubDate.ToShortDateString());
                 NodeTypes itemType = (isItunesFeed) ? NodeTypes.ItunesItemNode : NodeTypes.NonItunesItemNode;
                 itemNode.Tag = new FtpNodeTag(itemType, item);
                 fileNodeChild.Nodes.Add(itemNode);
@@ -116,7 +116,7 @@ namespace FeedBuilder
                 nonItunesChild.Tag = new FtpNodeTag(NodeTypes.NonItunesFeedNode, mFeedData.FeedPath);
                 foreach (FeedItem item in mFeedData.FeedItems)
                 {
-                    Node itemNode = new Node(item.Title);
+                    Node itemNode = new Node(item.Title + " : " + item.PubDate.ToShortDateString());
                     itemNode.Tag = new FtpNodeTag(NodeTypes.NonItunesItemNode, item);
                     nonItunesChild.Nodes.Add(itemNode);
                 }

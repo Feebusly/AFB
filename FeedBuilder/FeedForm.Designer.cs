@@ -115,6 +115,7 @@
             this.mMoveUpButton = new System.Windows.Forms.Button();
             this.mMoveDownButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.mItemsList = new FeedBuilder.ListboxRefresher();
             this.mItemTitle = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -150,10 +151,17 @@
             this.mItemPubDate = new System.Windows.Forms.DateTimePicker();
             this.mEnclosureUrl = new System.Windows.Forms.TextBox();
             this.mXMLTab = new System.Windows.Forms.TabPage();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.mXmlText = new FeedBuilder.NumberedTextBoxUC();
+            this.mFindText = new System.Windows.Forms.TextBox();
+            this.mFindButton = new System.Windows.Forms.Button();
+            this.mResetXmlChanges = new System.Windows.Forms.Button();
+            this.mApplyXmlChanges = new System.Windows.Forms.Button();
             this.mXsltTab = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.label42 = new System.Windows.Forms.Label();
+            this.mXslt = new FeedBuilder.NumberedTextBoxUC();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.mTransformXml = new System.Windows.Forms.Button();
             this.mClearXsltOut = new System.Windows.Forms.Button();
@@ -166,6 +174,7 @@
             this.mConsoleTextbox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.mLocalFileViewer = new FeedBuilder.LocalFileViewer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.mFTPImage = new System.Windows.Forms.PictureBox();
             this.mFtpStatusBar = new System.Windows.Forms.ProgressBar();
@@ -175,6 +184,7 @@
             this.mGetXMLFile = new System.Windows.Forms.Button();
             this.mConnect = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.mFTPViewer = new FeedBuilder.FTPViewer();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label43 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -187,16 +197,6 @@
             this.showXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xSLTransformToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mFtpDownloadWorker = new System.ComponentModel.BackgroundWorker();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.mFindText = new System.Windows.Forms.TextBox();
-            this.mFindButton = new System.Windows.Forms.Button();
-            this.mResetXmlChanges = new System.Windows.Forms.Button();
-            this.mApplyXmlChanges = new System.Windows.Forms.Button();
-            this.mItemsList = new FeedBuilder.ListboxRefresher();
-            this.mXmlText = new FeedBuilder.NumberedTextBoxUC();
-            this.mXslt = new FeedBuilder.NumberedTextBoxUC();
-            this.mLocalFileViewer = new FeedBuilder.LocalFileViewer();
-            this.mFTPViewer = new FeedBuilder.FTPViewer();
             ((System.ComponentModel.ISupportInitialize)(this.mErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
@@ -233,6 +233,10 @@
             this.mMP3GroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.mXMLTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.mXsltTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel1.SuspendLayout();
@@ -258,10 +262,6 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.mContextMenuFileCache.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // mFTPUploadWorker
@@ -1163,6 +1163,18 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(785, 489);
             this.tableLayoutPanel1.TabIndex = 79;
             // 
+            // mItemsList
+            // 
+            this.mItemsList.FormattingEnabled = true;
+            this.mItemsList.Location = new System.Drawing.Point(3, 29);
+            this.mItemsList.Name = "mItemsList";
+            this.tableLayoutPanel1.SetRowSpan(this.mItemsList, 7);
+            this.mItemsList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.mItemsList.Size = new System.Drawing.Size(164, 303);
+            this.mItemsList.TabIndex = 81;
+            this.mItemsList.SelectedIndexChanged += new System.EventHandler(this.mItemsList_SelectedIndexChanged);
+            this.mItemsList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mItemsList_KeyPress);
+            // 
             // mItemTitle
             // 
             this.mItemTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1553,6 +1565,77 @@
             this.mXMLTab.Text = "XML";
             this.mXMLTab.UseVisualStyleBackColor = true;
             // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.mXmlText);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.mFindText);
+            this.splitContainer3.Panel2.Controls.Add(this.mFindButton);
+            this.splitContainer3.Panel2.Controls.Add(this.mResetXmlChanges);
+            this.splitContainer3.Panel2.Controls.Add(this.mApplyXmlChanges);
+            this.splitContainer3.Size = new System.Drawing.Size(826, 489);
+            this.splitContainer3.SplitterDistance = 437;
+            this.splitContainer3.TabIndex = 1;
+            // 
+            // mXmlText
+            // 
+            this.mXmlText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mXmlText.Location = new System.Drawing.Point(0, 0);
+            this.mXmlText.Name = "mXmlText";
+            this.mXmlText.Size = new System.Drawing.Size(826, 437);
+            this.mXmlText.TabIndex = 2;
+            // 
+            // mFindText
+            // 
+            this.mFindText.Enabled = false;
+            this.mFindText.Location = new System.Drawing.Point(467, 5);
+            this.mFindText.Name = "mFindText";
+            this.mFindText.Size = new System.Drawing.Size(287, 20);
+            this.mFindText.TabIndex = 3;
+            this.mFindText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mFindText_KeyPress);
+            // 
+            // mFindButton
+            // 
+            this.mFindButton.Enabled = false;
+            this.mFindButton.Location = new System.Drawing.Point(760, 3);
+            this.mFindButton.Name = "mFindButton";
+            this.mFindButton.Size = new System.Drawing.Size(52, 23);
+            this.mFindButton.TabIndex = 2;
+            this.mFindButton.Text = "Find";
+            this.mFindButton.UseVisualStyleBackColor = true;
+            this.mFindButton.Click += new System.EventHandler(this.mFindButton_Click);
+            // 
+            // mResetXmlChanges
+            // 
+            this.mResetXmlChanges.Enabled = false;
+            this.mResetXmlChanges.Location = new System.Drawing.Point(112, 3);
+            this.mResetXmlChanges.Name = "mResetXmlChanges";
+            this.mResetXmlChanges.Size = new System.Drawing.Size(102, 23);
+            this.mResetXmlChanges.TabIndex = 1;
+            this.mResetXmlChanges.Text = "Reset Changes";
+            this.mResetXmlChanges.UseVisualStyleBackColor = true;
+            this.mResetXmlChanges.Click += new System.EventHandler(this.mResetXmlChanges_Click);
+            // 
+            // mApplyXmlChanges
+            // 
+            this.mApplyXmlChanges.Enabled = false;
+            this.mApplyXmlChanges.Location = new System.Drawing.Point(5, 3);
+            this.mApplyXmlChanges.Name = "mApplyXmlChanges";
+            this.mApplyXmlChanges.Size = new System.Drawing.Size(101, 23);
+            this.mApplyXmlChanges.TabIndex = 0;
+            this.mApplyXmlChanges.Text = "Apply Changes";
+            this.mApplyXmlChanges.UseVisualStyleBackColor = true;
+            this.mApplyXmlChanges.Click += new System.EventHandler(this.mApplyXmlChanges_Click);
+            // 
             // mXsltTab
             // 
             this.mXsltTab.Controls.Add(this.splitContainer5);
@@ -1610,6 +1693,14 @@
             this.label42.TabIndex = 0;
             this.label42.Text = "The XSLT code below will transform your xml feed into an html document.  Just hit" +
     " the Generate button.";
+            // 
+            // mXslt
+            // 
+            this.mXslt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mXslt.Location = new System.Drawing.Point(0, 0);
+            this.mXslt.Name = "mXslt";
+            this.mXslt.Size = new System.Drawing.Size(826, 212);
+            this.mXslt.TabIndex = 2;
             // 
             // splitContainer7
             // 
@@ -1758,6 +1849,15 @@
             this.panel2.Size = new System.Drawing.Size(306, 310);
             this.panel2.TabIndex = 0;
             // 
+            // mLocalFileViewer
+            // 
+            this.mLocalFileViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mLocalFileViewer.ItemChecked = false;
+            this.mLocalFileViewer.Location = new System.Drawing.Point(0, 0);
+            this.mLocalFileViewer.Name = "mLocalFileViewer";
+            this.mLocalFileViewer.Size = new System.Drawing.Size(306, 310);
+            this.mLocalFileViewer.TabIndex = 27;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.mFTPImage);
@@ -1848,6 +1948,15 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(306, 310);
             this.panel4.TabIndex = 2;
+            // 
+            // mFTPViewer
+            // 
+            this.mFTPViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mFTPViewer.Location = new System.Drawing.Point(0, 0);
+            this.mFTPViewer.Name = "mFTPViewer";
+            this.mFTPViewer.ServerInfo = null;
+            this.mFTPViewer.Size = new System.Drawing.Size(306, 310);
+            this.mFTPViewer.TabIndex = 26;
             // 
             // panel7
             // 
@@ -1950,115 +2059,6 @@
             this.mFtpDownloadWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.mFtpDownloadWorker_ProgressChanged);
             this.mFtpDownloadWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.mFtpDownloadWorker_RunWorkerCompleted);
             // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.mXmlText);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.mFindText);
-            this.splitContainer3.Panel2.Controls.Add(this.mFindButton);
-            this.splitContainer3.Panel2.Controls.Add(this.mResetXmlChanges);
-            this.splitContainer3.Panel2.Controls.Add(this.mApplyXmlChanges);
-            this.splitContainer3.Size = new System.Drawing.Size(826, 489);
-            this.splitContainer3.SplitterDistance = 437;
-            this.splitContainer3.TabIndex = 1;
-            // 
-            // mFindText
-            // 
-            this.mFindText.Enabled = false;
-            this.mFindText.Location = new System.Drawing.Point(467, 5);
-            this.mFindText.Name = "mFindText";
-            this.mFindText.Size = new System.Drawing.Size(287, 20);
-            this.mFindText.TabIndex = 3;
-            this.mFindText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mFindText_KeyPress);
-            // 
-            // mFindButton
-            // 
-            this.mFindButton.Enabled = false;
-            this.mFindButton.Location = new System.Drawing.Point(760, 3);
-            this.mFindButton.Name = "mFindButton";
-            this.mFindButton.Size = new System.Drawing.Size(52, 23);
-            this.mFindButton.TabIndex = 2;
-            this.mFindButton.Text = "Find";
-            this.mFindButton.UseVisualStyleBackColor = true;
-            this.mFindButton.Click += new System.EventHandler(this.mFindButton_Click);
-            // 
-            // mResetXmlChanges
-            // 
-            this.mResetXmlChanges.Enabled = false;
-            this.mResetXmlChanges.Location = new System.Drawing.Point(112, 3);
-            this.mResetXmlChanges.Name = "mResetXmlChanges";
-            this.mResetXmlChanges.Size = new System.Drawing.Size(102, 23);
-            this.mResetXmlChanges.TabIndex = 1;
-            this.mResetXmlChanges.Text = "Reset Changes";
-            this.mResetXmlChanges.UseVisualStyleBackColor = true;
-            this.mResetXmlChanges.Click += new System.EventHandler(this.mResetXmlChanges_Click);
-            // 
-            // mApplyXmlChanges
-            // 
-            this.mApplyXmlChanges.Enabled = false;
-            this.mApplyXmlChanges.Location = new System.Drawing.Point(5, 3);
-            this.mApplyXmlChanges.Name = "mApplyXmlChanges";
-            this.mApplyXmlChanges.Size = new System.Drawing.Size(101, 23);
-            this.mApplyXmlChanges.TabIndex = 0;
-            this.mApplyXmlChanges.Text = "Apply Changes";
-            this.mApplyXmlChanges.UseVisualStyleBackColor = true;
-            this.mApplyXmlChanges.Click += new System.EventHandler(this.mApplyXmlChanges_Click);
-            // 
-            // mItemsList
-            // 
-            this.mItemsList.FormattingEnabled = true;
-            this.mItemsList.Location = new System.Drawing.Point(3, 29);
-            this.mItemsList.Name = "mItemsList";
-            this.tableLayoutPanel1.SetRowSpan(this.mItemsList, 7);
-            this.mItemsList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.mItemsList.Size = new System.Drawing.Size(164, 303);
-            this.mItemsList.TabIndex = 81;
-            this.mItemsList.SelectedIndexChanged += new System.EventHandler(this.mItemsList_SelectedIndexChanged);
-            this.mItemsList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mItemsList_KeyPress);
-            // 
-            // mXmlText
-            // 
-            this.mXmlText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mXmlText.Location = new System.Drawing.Point(0, 0);
-            this.mXmlText.Name = "mXmlText";
-            this.mXmlText.Size = new System.Drawing.Size(826, 437);
-            this.mXmlText.TabIndex = 2;
-            // 
-            // mXslt
-            // 
-            this.mXslt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mXslt.Location = new System.Drawing.Point(0, 0);
-            this.mXslt.Name = "mXslt";
-            this.mXslt.Size = new System.Drawing.Size(826, 212);
-            this.mXslt.TabIndex = 2;
-            // 
-            // mLocalFileViewer
-            // 
-            this.mLocalFileViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mLocalFileViewer.ItemChecked = false;
-            this.mLocalFileViewer.Location = new System.Drawing.Point(0, 0);
-            this.mLocalFileViewer.Name = "mLocalFileViewer";
-            this.mLocalFileViewer.Size = new System.Drawing.Size(306, 310);
-            this.mLocalFileViewer.TabIndex = 27;
-            // 
-            // mFTPViewer
-            // 
-            this.mFTPViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mFTPViewer.Location = new System.Drawing.Point(0, 0);
-            this.mFTPViewer.Name = "mFTPViewer";
-            this.mFTPViewer.ServerInfo = null;
-            this.mFTPViewer.Size = new System.Drawing.Size(306, 310);
-            this.mFTPViewer.TabIndex = 26;
-            // 
             // FeedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2118,6 +2118,11 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.mXMLTab.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.mXsltTab.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel2.ResumeLayout(false);
@@ -2149,11 +2154,6 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.mContextMenuFileCache.ResumeLayout(false);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            this.splitContainer3.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
