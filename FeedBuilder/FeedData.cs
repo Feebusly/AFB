@@ -689,7 +689,7 @@ namespace FeedBuilder
             get 
             {
                 string pubDateString = GetFeedElementValue(mFeedDocument, PUB_DATE, null, null);
-                DateTime dt = DateTime.MinValue;
+                DateTime dt = DateTime.Now;
                 FeedValidator.TryParseDateTime(pubDateString, out dt);
                 //try
                 //{

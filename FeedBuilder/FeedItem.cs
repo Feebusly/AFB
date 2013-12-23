@@ -272,7 +272,7 @@ namespace FeedBuilder
             get 
             {
                 string pubDateString = mFeedItemNode.SelectSingleNode(PUB_DATE_XPATH).InnerText;
-                DateTime dt = DateTime.MinValue;
+                DateTime dt = DateTime.Now;
                 FeedValidator.TryParseDateTime(pubDateString, out dt);
                 return dt;
             }
@@ -640,17 +640,31 @@ namespace FeedBuilder
 
         public FeedItem Clone()
         {
-            //XmlNode cloneNode = mFeedItemNode.OwnerDocument.ImportNode(mFeedItemNode.CloneNode(true), true);
-            //mParent.Dirty = true; 
-            //return new FeedItem(mParent, mNamespaceMgr, cloneNode, Guid.NewGuid().ToString(), null);
+            //<item>
+            //  <title>For the Faithful</title>
+            //  <description>Christmas</description>
+            //  <link>http://www.crossroads-ridgecrest.org/</link>
+            //  <enclosure url="http://www.crossroads-ridgecrest.org/Websites/crossroadscommunity/images/Sermons/SermonAudio2013/12-08-2013.mp3" length="8550089" type="audio/mpeg" />
+            //  <guid isPermaLink="false">482fa05b-34a9-44fc-8c2c-3dc4ee1a10fc</guid>
+            //  <pubDate>Sun, 08 Dec 2013 21:17:34 -0800</pubDate>
+            //  <itunes:subtitle>Christmas</itunes:subtitle>
+            //  <itunes:summary>
+            //  </itunes:summary>
+            //  <itunes:duration>00:35:37</itunes:duration>
+            //  <itunes:author>Bill Corley</itunes:author>
+            //  <itunes:explicit>No</itunes:explicit>
+            //</item>
+
             FeedItem newItem = mParent.CreateNewFeedItem();
             newItem.Title = this.Title;
             newItem.Description = this.Description;
+            newItem.Link = this.Link;
+            newItem.EnclosureURL = this.EnclosureURL;
+            newItem.PubDate = this.PubDate;
             newItem.SubTitle = this.SubTitle;
             newItem.Summary = this.Summary;
             newItem.Author = this.Author;
-            newItem.Link = this.Link;
-            newItem.EnclosureURL = this.EnclosureURL;
+  
             return newItem;
         }
 

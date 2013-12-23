@@ -128,6 +128,9 @@ namespace FeedBuilder
 
         private void AddWatcher(string directory)
         {
+            if (!Directory.Exists(directory))
+                return;
+
             if (!mWatchers.ContainsKey(directory))
             {
                 FileSystemWatcher watcher = new FileSystemWatcher();

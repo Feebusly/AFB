@@ -110,7 +110,12 @@ namespace FeedBuilder
             if (mNonItunesCheckBox.Checked && isItunesFeed)
             {
                 if (mFeedData.FtpServerPathNonItunesFile == null)
-                    mFeedData.FtpServerPathNonItunesFile = mFeedData.FeedFileName;
+                {
+                    string newFileName = mFeedData.FeedFileName;
+                    int extensionPosition = newFileName.LastIndexOf(".");
+                    newFileName.Insert(extensionPosition-1, "(nonItunes)");
+                    mFeedData.FtpServerPathNonItunesFile = newFileName;
+                }
                 Node nonItunesChild = new Node(mFeedData.FtpServerPathNonItunesFile);
                 fileNode.Nodes.Add(nonItunesChild);
                 nonItunesChild.Tag = new FtpNodeTag(NodeTypes.NonItunesFeedNode, mFeedData.FeedPath);

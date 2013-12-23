@@ -235,7 +235,7 @@ namespace FeedBuilder
             //Try the d's
            z = "zzzzzz";
            while (!parsed)
-            {
+           {
                 parsed = DateTime.TryParseExact(dt, "ddd, d MMM yyyy HH:mm:ss " + z, CultureInfo.InvariantCulture,
                     DateTimeStyles.AllowWhiteSpaces, out datetime);
 
@@ -309,7 +309,7 @@ namespace FeedBuilder
 
             if (!parsed)
                 throw new FormatException(string.Format(
-                    "Could not parse date \"{0}\" according to format \"ddd, d MMM yyyy HH:mm:s z\"."));
+                    "Could not parse date \"{0}\" according to format \"ddd, d MMM yyyy HH:mm:s z\".", dateTimeString));
 
             return parsed;
         }

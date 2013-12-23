@@ -140,20 +140,27 @@ namespace FeedBuilder
 
         private void mLocalFileViewer_NodeChecked(Node fileNode, CheckState checkState)
         {
-            bool checkFound = false;
-            foreach (Node node in mLocalFileViewer.AllNodesOfType(FtpNodeCountTypes))
+            try
             {
-                if (node.IsChecked && node.Tag != null && mFTPConnected)
+                bool checkFound = false;
+                foreach (Node node in mLocalFileViewer.AllNodesOfType(FtpNodeCountTypes))
                 {
-                    FtpNodeTag tag = node.Tag as FtpNodeTag;
-                    if (tag != null)
+                    if (node.IsChecked && node.Tag != null && mFTPConnected)
                     {
-                        checkFound = true;
-                        break;
+                        FtpNodeTag tag = node.Tag as FtpNodeTag;
+                        if (tag != null)
+                        {
+                            checkFound = true;
+                            break;
+                        }
                     }
                 }
+                mPutXMLFile.Enabled = checkFound;
             }
-            mPutXMLFile.Enabled = checkFound;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
         /// <summary>
@@ -262,7 +269,7 @@ namespace FeedBuilder
             mImageDescription.Text = mFeedData.ImageDescription;
             mImageURL.Text = mFeedData.ImageURL;
             mImageLink.Text = mFeedData.ImageLink;
-            if (mFeedData.LocalImagePath != null)
+            if (mFeedData.LocalImagePath != null && File.Exists(mFeedData.LocalImagePath))
                 LoadImage(mFeedData.LocalImagePath, false);
             else
                 ClearImage(false);
@@ -459,58 +466,6 @@ namespace FeedBuilder
                 }
             }
         }
-
-        //private void RefreshFTPTab()
-        //{
-        //    TreeNode fileNode = mFeedUploadFiles.Nodes[0];
-        //    TreeNode imageNode = mFeedUploadFiles.Nodes[1];
-        //    TreeNode mp3sNode = mFeedUploadFiles.Nodes[2];
-        //    TreeNode transformNode = mFeedUploadFiles.Nodes[3];
-
-        //    fileNode.Nodes.Clear();
-        //    imageNode.Nodes.Clear();
-        //    mp3sNode.Nodes.Clear();
-        //    transformNode.Nodes.Clear();
-
-        //    TreeNode fileNodeChild = fileNode.Nodes.Add(mFeedData.FeedFileName);
-        //    fileNodeChild.Tag = mFeedData.FeedPath;
-
-        //    mValidationURL.Text = mFeedData.ValidationURL;
-
-        //    if (mFeedData.LocalImagePath != null)
-        //    {
-        //        TreeNode imgNodeChild = imageNode.Nodes.Add(mFeedData.LocalImageFileName);
-        //        imgNodeChild.Tag = mFeedData.LocalImagePath;
-        //    }
-
-        //    if (mItemsList.Items.Count > 0)
-        //    {
-        //        foreach (FeedItem feedItem in mItemsList.Items)
-        //        {
-        //            if (feedItem.SoundFilePath != null)
-        //            {
-        //                string nodeText = string.Format("{0} : {1}", feedItem.Title, feedItem.SoundFileName);
-        //                TreeNode mp3 = mp3sNode.Nodes.Add(nodeText);
-        //                mp3.Tag = feedItem.SoundFilePath;
-        //            }
-        //        }
-        //    }
-
-        //    if (mFeedData.XsltOutput != null)
-        //    {
-        //        string xslOutputPath = mFeedData.XsltOutputPath;
-        //        if (xslOutputPath != null)
-        //        {
-        //            string[] splits = xslOutputPath.Split('\\');
-        //            string filename = splits[splits.Length - 1];
-
-        //            TreeNode transformNodeChild = transformNode.Nodes.Add(filename);
-        //            transformNodeChild.Tag = mFeedData.XsltOutputPath;
-        //        }
-        //    }
-
-        //    RefreshFTPTab2();
-        //}
 
         private void RefreshFTPTab()
         {
@@ -740,6 +695,7 @@ namespace FeedBuilder
             {
                 object selectedItem = mItemsList.SelectedItem;
                 object upItem = mItemsList.Items[index - 1];
+                mItemsList.ClearSelected();
                 mItemsList.Items[index - 1] = selectedItem;
                 mItemsList.Items[index] = upItem;
                 mItemsList.SelectedIndex = index - 1;
@@ -759,6 +715,7 @@ namespace FeedBuilder
             {
                 object selectedItem = mItemsList.SelectedItem;
                 object downItem = mItemsList.Items[index + 1];
+                mItemsList.ClearSelected();
                 mItemsList.Items[index + 1] = selectedItem;
                 mItemsList.Items[index] = downItem;
                 mItemsList.SelectedIndex = index + 1;
@@ -1244,7 +1201,6 @@ namespace FeedBuilder
         private void mConnect_Click(object sender, EventArgs e)
         {
             mFTPConnected = false;
-
             try
             {
                 FTPConnectForm connectForm = new FTPConnectForm();
@@ -1294,26 +1250,6 @@ namespace FeedBuilder
                         MessageBox.Show(ex.Message);
                     }
                 }
-
-                //FTPServerInfo serverInfo = connectForm.ServerInfo;
-                //if (serverInfo != null && serverInfo.Server != null && serverInfo.User != null && serverInfo.Password != null)
-                //{
-                //    FTPConnector connector = connectForm.Connector;
-                //    if (!connector.Connected)
-                //    {
-                //        mFTPImage.Image = Resources.FTPDisconnected;
-                //        mFTPConnected = false;
-                //    }
-                //    else
-                //    {
-                //        mFTPViewer.ShowFTPConnection(connector);
-                //        if (mFeedData != null && mFeedData.FeedPath != null)
-                //        {
-                //            mPutXMLFile.Enabled = FTPSelectionExists();
-                //        }
-                //        mFTPConnected = true;
-                //    }
-                //}
             }
             catch (Exception ex)
             {
@@ -1348,19 +1284,6 @@ namespace FeedBuilder
         {
             try
             {
-                //if (mFeedData.Dirty)
-                //{
-                //    DialogResult result = MessageBox.Show(
-                //        "You must save your feed file first.  Save now?", "Save Now?",
-                //        MessageBoxButtons.OKCancel);
-                //    if (result == System.Windows.Forms.DialogResult.OK)
-                //        Save();
-                //    else
-                //        return;
-                //}
-
-                //List<Node> filesToUpload = mLocalFileViewer.CheckedNodesOfType(FtpNodeCountTypes);
-
                 mFTPUploadWorker.RunWorkerAsync(null);
             }
             catch (Exception ex)
@@ -1408,71 +1331,85 @@ namespace FeedBuilder
 
         private void mFileList_DrawItem(object sender, DrawItemEventArgs e)
         {
-            if (e.Index < 0)
-                return;
-
-            ListBox lb = (ListBox)sender;
-            Color bgColor = Color.White;
-            Color textColor = Color.Black;
-           
-            FileCacheEntry entry = lb.Items[e.Index] as FileCacheEntry;
-            if (entry != null)
+            try
             {
-                if (entry.IsUnsavedNewFile())
+                if (e.Index < 0)
+                    return;
+
+                ListBox lb = (ListBox)sender;
+                Color bgColor = Color.White;
+                Color textColor = Color.Black;
+
+                FileCacheEntry entry = lb.Items[e.Index] as FileCacheEntry;
+                if (entry != null)
                 {
-                    textColor = Color.White;
-                    bgColor = Color.Blue;
+                    if (entry.IsUnsavedNewFile())
+                    {
+                        textColor = Color.White;
+                        bgColor = Color.Blue;
+                    }
+                    else if (!entry.FileExists)
+                    {
+                        bgColor = Color.Red;
+                        textColor = Color.White;
+                    }
+                    else if (entry.Selected || entry.IsActive)
+                    {
+                        textColor = Color.White;
+                        bgColor = Color.Blue;
+                    }
                 }
-                else if (!entry.FileExists)
-                {
-                    bgColor = Color.Red;
-                    textColor = Color.White;
-                }
-                else if (entry.Selected || entry.IsActive)
-                {
-                    textColor = Color.White;
-                    bgColor = Color.Blue;
-                }
+                e.DrawBackground();
+
+                Graphics g = e.Graphics;
+                g.FillRectangle(new SolidBrush(bgColor), e.Bounds);
+                g.DrawString(lb.Items[e.Index].ToString(), e.Font, new SolidBrush(textColor), new PointF(e.Bounds.X, e.Bounds.Y));
+
+                e.DrawFocusRectangle();
             }
-            e.DrawBackground();
-
-            Graphics g = e.Graphics;
-            g.FillRectangle(new SolidBrush(bgColor), e.Bounds);
-            g.DrawString(lb.Items[e.Index].ToString(), e.Font, new SolidBrush(textColor), new PointF(e.Bounds.X, e.Bounds.Y));
-
-            e.DrawFocusRectangle();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
         private bool mDoubleClicked;
         private void mFileList_DoubleClick(object sender, EventArgs e)
         {
-            mDoubleClicked = true;
-            FileCacheEntry entry = mFileList.Items[mFileList.SelectedIndex] as FileCacheEntry;
-            if (entry.FilePath == mFeedData.FeedPath)
-                return;
-
-            if (mFeedData.Dirty)
+            try
             {
-                DialogResult yesNo = MessageBox.Show("Your file is not saved.  Save now before opening new file?",
-                    "Save Now?", MessageBoxButtons.YesNo);
-                if (yesNo == DialogResult.Yes)
+                mDoubleClicked = true;
+                FileCacheEntry entry = mFileList.Items[mFileList.SelectedIndex] as FileCacheEntry;
+                if (entry.FilePath == mFeedData.FeedPath)
+                    return;
+
+                if (mFeedData.Dirty)
                 {
-                    Save();
+                    DialogResult yesNo = MessageBox.Show("Your file is not saved.  Save now before opening new file?",
+                        "Save Now?", MessageBoxButtons.YesNo);
+                    if (yesNo == DialogResult.Yes)
+                    {
+                        Save();
+                    }
+                }
+
+                if (entry != null && !entry.IsActive)
+                {
+                    string filePath = entry.FilePath;
+                    if (File.Exists(filePath))
+                    {
+                        mFeedFilesCache.Select(entry);
+                        LoadFeedNoDialog(filePath);
+                    }
+                    else
+                    {
+                        MessageBox.Show(string.Format("Error, could not find file '{0}'.", filePath));
+                    }
                 }
             }
-
-            if (entry != null && !entry.IsActive)
+            catch (Exception ex)
             {
-                string filePath = entry.FilePath;
-                if (File.Exists(filePath))
-                {
-                    mFeedFilesCache.Select(entry);
-                    LoadFeedNoDialog(filePath);
-                }
-                else
-                {
-                    MessageBox.Show(string.Format("Error, could not find file '{0}'.", filePath));
-                }
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
             }
         }
 
@@ -1484,77 +1421,105 @@ namespace FeedBuilder
         private FileCacheEntry mSelectedFileCacheEntry;
         private void mFileList_MouseUp(object sender, MouseEventArgs e)
         {
-            if (mDoubleClicked)
+            try
             {
-                mDoubleClicked = false;
-                return;
+                if (mDoubleClicked)
+                {
+                    mDoubleClicked = false;
+                    return;
+                }
+                Point point = new Point(e.X, e.Y);
+
+                int index = mFileList.IndexFromPoint(point);
+
+                if (index < 0) return;
+
+                FileCacheEntry entry = mFileList.Items[index] as FileCacheEntry;
+                mFeedFilesCache.Select(entry);
+                mSelectedFileCacheEntry = entry;
+                mFileList.Invalidate();
+
+                if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                {
+                    mContextMenuFileCache.Show(mFileList, point);
+                }
             }
-            Point point = new Point(e.X, e.Y);
-            
-            int index = mFileList.IndexFromPoint(point);
-
-            if (index < 0) return;
-
-            FileCacheEntry entry = mFileList.Items[index] as FileCacheEntry;
-            mFeedFilesCache.Select(entry);
-            mSelectedFileCacheEntry = entry;
-            mFileList.Invalidate();
-
-            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            catch (Exception ex)
             {
-                mContextMenuFileCache.Show(mFileList, point);
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
             }
         }
 
 
         private void removeFromListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (mSelectedFileCacheEntry != null)
+            try
             {
-                mFeedFilesCache.Remove(mSelectedFileCacheEntry.FilePath);
-                object removeItem = null;
-                foreach (object listItem in mFileList.Items)
+                if (mSelectedFileCacheEntry != null)
                 {
-                    if (listItem == mSelectedFileCacheEntry)
+                    mFeedFilesCache.Remove(mSelectedFileCacheEntry.FilePath);
+                    object removeItem = null;
+                    foreach (object listItem in mFileList.Items)
                     {
-                        removeItem = listItem;
+                        if (listItem == mSelectedFileCacheEntry)
+                        {
+                            removeItem = listItem;
+                        }
                     }
+                    if (removeItem != null)
+                    {
+                        mFileList.Items.Remove(removeItem);
+                        mFeedFilesCache.Save();
+                    }
+                    mFileList.Invalidate();
                 }
-                if (removeItem != null)
-                {
-                    mFileList.Items.Remove(removeItem);
-                    mFeedFilesCache.Save();
-                }
-                mFileList.Invalidate();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
             }
         }
 
         private void openInExplorerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (mSelectedFileCacheEntry != null)
+            try
             {
-                OpenFileDialog fileChooser = new OpenFileDialog();
-                fileChooser.FilterIndex = 1;
-                fileChooser.InitialDirectory = mSelectedFileCacheEntry.Directory;
-                fileChooser.FileName = mSelectedFileCacheEntry.FileName;
-                fileChooser.Title = "Containing Folder";
-                fileChooser.ShowDialog();
+                if (mSelectedFileCacheEntry != null)
+                {
+                    OpenFileDialog fileChooser = new OpenFileDialog();
+                    fileChooser.FilterIndex = 1;
+                    fileChooser.InitialDirectory = mSelectedFileCacheEntry.Directory;
+                    fileChooser.FileName = mSelectedFileCacheEntry.FileName;
+                    fileChooser.Title = "Containing Folder";
+                    fileChooser.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
             }
         }
 
         private void mOpenFileDir_Click(object sender, EventArgs e)
         {
-            string file = mFeedData.FeedPath;
-            if (file != null && file.Length > 0)
+            try
             {
-                string[] splits = file.Split('/', '\\');
-                string fileName = splits[splits.Length - 1];
-                string dir = string.Join("\\", splits, 0, splits.Length - 1);
-                OpenFileDialog fileChooser = new OpenFileDialog();
-                fileChooser.FilterIndex = 1;
-                fileChooser.InitialDirectory = dir;
-                fileChooser.FileName = fileName;
-                fileChooser.ShowDialog();
+                string file = mFeedData.FeedPath;
+                if (file != null && file.Length > 0)
+                {
+                    string[] splits = file.Split('/', '\\');
+                    string fileName = splits[splits.Length - 1];
+                    string dir = string.Join("\\", splits, 0, splits.Length - 1);
+                    OpenFileDialog fileChooser = new OpenFileDialog();
+                    fileChooser.FilterIndex = 1;
+                    fileChooser.InitialDirectory = dir;
+                    fileChooser.FileName = fileName;
+                    fileChooser.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
             }
         }
 
@@ -1729,15 +1694,22 @@ namespace FeedBuilder
 
         private void mSearchLocalFiles_Click(object sender, EventArgs e)
         {
-            //Let them choose a starting point to search for files.
-            FolderBrowserDialog folderChooser = new FolderBrowserDialog();
-
-            if (folderChooser.ShowDialog() == DialogResult.OK)
+            try
             {
-                string folderPath = folderChooser.SelectedPath;
-                FindSoundFiles(folderPath);
+                //Let them choose a starting point to search for files.
+                FolderBrowserDialog folderChooser = new FolderBrowserDialog();
+
+                if (folderChooser.ShowDialog() == DialogResult.OK)
+                {
+                    string folderPath = folderChooser.SelectedPath;
+                    FindSoundFiles(folderPath);
+                }
+                RefreshForm();
             }
-            RefreshForm();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
         private void FindSoundFiles(string folderPath)
@@ -1830,8 +1802,15 @@ namespace FeedBuilder
         /// <param name="e"></param>
         private void mItemsList_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Control.ModifierKeys == Keys.Control)
-                e.Handled = true;
+            try
+            {
+                if (Control.ModifierKeys == Keys.Control)
+                    e.Handled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
         #endregion
@@ -1840,22 +1819,36 @@ namespace FeedBuilder
 
         private void FeedForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            (mFeedFilesCache as IDisposable).Dispose();
+            try
+            {
+                (mFeedFilesCache as IDisposable).Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
         private void FeedForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (mFeedData.Dirty)
+            try
             {
-                DialogResult result = MessageBox.Show("File is not saved.  Save now?", "Save Now?", MessageBoxButtons.YesNoCancel);
-                if (result == DialogResult.OK)
+                if (mFeedData.Dirty)
                 {
-                    mFeedData.Save();
+                    DialogResult result = MessageBox.Show("File is not saved.  Save now?", "Save Now?", MessageBoxButtons.YesNoCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        mFeedData.Save();
+                    }
+                    else if (result == DialogResult.Cancel)
+                    {
+                        e.Cancel = true;
+                    }
                 }
-                else if (result == DialogResult.Cancel)
-                {
-                    e.Cancel = true;
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
             }
         }
 
@@ -1952,16 +1945,30 @@ namespace FeedBuilder
 
         private void mLocalImagePath_TextChanged(object sender, EventArgs e)
         {
-            if (mFeedData != null)
-                mLocalImagePath.Text = mFeedData.LocalImagePath;
-            else
-                mLocalImagePath.Text = string.Empty;
+            try
+            {
+                if (mFeedData != null)
+                    mLocalImagePath.Text = mFeedData.LocalImagePath;
+                else
+                    mLocalImagePath.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
         private void mAboutImage_Click(object sender, EventArgs e)
         {
-            AboutImageForm about = new AboutImageForm();
-            about.Show();
+            try
+            {
+                AboutImageForm about = new AboutImageForm();
+                about.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
         private void mImageTitle_Leave(object sender, EventArgs e)
@@ -2061,28 +2068,35 @@ namespace FeedBuilder
 
         private void mCloseImage_Click(object sender, EventArgs e)
         {
-            if (mFeedImage != null)
+            try
             {
-                if (MessageBox.Show("Are you sure you want to remove this image?", "Remove Image",
-                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (mFeedImage != null)
                 {
-                    mFeedImage = null;
-                    mFeedImagePictureBox.Image = null;
-                    mImageTitle.Text = null;
-                    mImageDescription.Text = null;
-                    mImageURL.Text = null;
-                    mImageLink.Text = null;
-                    mImageFileSize.Text = null;
-                    mImageHeight.Text = null;
-                    mImageWidth.Text = null;
+                    if (MessageBox.Show("Are you sure you want to remove this image?", "Remove Image",
+                        MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        mFeedImage = null;
+                        mFeedImagePictureBox.Image = null;
+                        mImageTitle.Text = null;
+                        mImageDescription.Text = null;
+                        mImageURL.Text = null;
+                        mImageLink.Text = null;
+                        mImageFileSize.Text = null;
+                        mImageHeight.Text = null;
+                        mImageWidth.Text = null;
 
-                    mFeedData.LocalImagePath = null;
-                    mFeedData.ImageDescription = null;
-                    mFeedData.ImageLink = null;
-                    mFeedData.ImageTitle = null;
-                    mFeedData.ImageURL = null;
-                    RefreshAfterChange();
+                        mFeedData.LocalImagePath = null;
+                        mFeedData.ImageDescription = null;
+                        mFeedData.ImageLink = null;
+                        mFeedData.ImageTitle = null;
+                        mFeedData.ImageURL = null;
+                        RefreshAfterChange();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
             }
         }
 
@@ -2249,14 +2263,28 @@ namespace FeedBuilder
         private string mLastFindText = null;
         private void mFindButton_Click(object sender, EventArgs e)
         {
-            Find(mFindText.Text);
+            try
+            {
+                Find(mFindText.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
         private void mFindText_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13) // Return char
+            try
             {
-                Find(mFindText.Text);
+                if (e.KeyChar == 13) // Return char
+                {
+                    Find(mFindText.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
             }
         }
 
@@ -2274,70 +2302,91 @@ namespace FeedBuilder
 
         private void mItunesPodcast_CheckedChanged(object sender, EventArgs e)
         {
-            if (!mRefreshing)
+            try
             {
-                //Itunes information is going to be cleared!
-                if (!mItunesPodcast.Checked && mFeedData.ItunesFeed)
+                if (!mRefreshing)
                 {
-                    DialogResult result = MessageBox.Show(
-                        "Unchecking iTunes will cause you to loose your iTunes data.  Do you want to proceed?",
-                        "Data Loss",
-                        MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
+                    //Itunes information is going to be cleared!
+                    if (!mItunesPodcast.Checked && mFeedData.ItunesFeed)
                     {
-                        mFeedData.ItunesFeed = false;
+                        DialogResult result = MessageBox.Show(
+                            "Unchecking iTunes will cause you to loose your iTunes data.  Do you want to proceed?",
+                            "Data Loss",
+                            MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                        {
+                            mFeedData.ItunesFeed = false;
+                        }
                     }
+                    else if (mItunesPodcast.Checked && !mFeedData.ItunesFeed)
+                    {
+                        mFeedData.ItunesFeed = true;
+                    }
+                    RefreshForm();
                 }
-                else if (mItunesPodcast.Checked && !mFeedData.ItunesFeed)
-                {
-                    mFeedData.ItunesFeed = true;
-                }
-                RefreshForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
             }
         }
 
         private void showXMLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Order is XML, XSLT, FTP
-            //Need to add XML.
-            if (showXMLToolStripMenuItem.Checked)
+            try
             {
-                bool addXsltBack = false;
-                if (this.mFormTabs.Controls.Contains(mXsltTab))
+                //Order is XML, XSLT, FTP
+                //Need to add XML.
+                if (showXMLToolStripMenuItem.Checked)
                 {
-                    this.mFormTabs.Controls.Remove(mXsltTab);
-                    addXsltBack = true;
-                }
-                this.mFormTabs.Controls.Remove(mFTPTab);
-                
-                //Now put them back
-                this.mFormTabs.Controls.Add(mXMLTab);
-                if (addXsltBack)
-                    this.mFormTabs.Controls.Add(mXsltTab);
-                this.mFormTabs.Controls.Add(mFTPTab);
+                    bool addXsltBack = false;
+                    if (this.mFormTabs.Controls.Contains(mXsltTab))
+                    {
+                        this.mFormTabs.Controls.Remove(mXsltTab);
+                        addXsltBack = true;
+                    }
+                    this.mFormTabs.Controls.Remove(mFTPTab);
 
-                this.mFormTabs.SelectedTab = mXMLTab;
+                    //Now put them back
+                    this.mFormTabs.Controls.Add(mXMLTab);
+                    if (addXsltBack)
+                        this.mFormTabs.Controls.Add(mXsltTab);
+                    this.mFormTabs.Controls.Add(mFTPTab);
+
+                    this.mFormTabs.SelectedTab = mXMLTab;
+                }
+                else
+                    this.mFormTabs.Controls.Remove(this.mXMLTab);
             }
-            else
-                this.mFormTabs.Controls.Remove(this.mXMLTab);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
         private void xSLTransformToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Order is XML, XSLT, FTP
-            //Need to add XSLT.
-            if (xSLTransformToolStripMenuItem.Checked)
+            try
             {
-                
-                this.mFormTabs.Controls.Remove(mFTPTab);
+                //Order is XML, XSLT, FTP
+                //Need to add XSLT.
+                if (xSLTransformToolStripMenuItem.Checked)
+                {
 
-                //Now put them back
-                this.mFormTabs.Controls.Add(mXsltTab);
-                this.mFormTabs.Controls.Add(mFTPTab);
-                this.mFormTabs.SelectedTab = mXsltTab;
+                    this.mFormTabs.Controls.Remove(mFTPTab);
+
+                    //Now put them back
+                    this.mFormTabs.Controls.Add(mXsltTab);
+                    this.mFormTabs.Controls.Add(mFTPTab);
+                    this.mFormTabs.SelectedTab = mXsltTab;
+                }
+                else
+                    this.mFormTabs.Controls.Remove(this.mXsltTab);
             }
-            else
-                this.mFormTabs.Controls.Remove(this.mXsltTab);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
         private void mTransformXml_Click(object sender, EventArgs e)
@@ -2382,102 +2431,54 @@ namespace FeedBuilder
 
         private void mXslt_Leave(object sender, EventArgs e)
         {
-            mFeedData.XSLT = mXslt.Text;
+            try
+            {
+                mFeedData.XSLT = mXslt.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
-
-        //private void mFeedUploadParts_MouseClick(object sender, MouseEventArgs e)
-        //{
-        //    if (e.Button == System.Windows.Forms.MouseButtons.Right)
-        //    {
-        //        //figure out which node was clicked
-        //        TreeViewAdv treeView = sender as TreeViewAdv;
-        //        if (treeView != null)
-        //        {
-        //            TreeNodeAdv selectedNodeAdv = treeView.SelectedNode;
-        //            if (selectedNodeAdv != null)
-        //            {
-        //                Node selectedNode = selectedNodeAdv.Tag as Node;
-        //                if (selectedNode != null)
-        //                {
-        //                    Point mousePoint = new Point(e.X, e.Y);
-        //                    mContextMenuLocalFiles.Items.Clear();
-        //                    switch (selectedNode.Text)
-        //                    {
-        //                        case FTP_TAB_HTML_NODE_TEXT:
-        //                            if (mFeedData.ItunesFeed)
-        //                            {
-        //                                ToolStripItem item = mContextMenuLocalFiles.Items.Add("Generate Non iTunes Feed");
-        //                                mContextMenuLocalFiles.Show(mFeedUploadParts, mousePoint);
-        //                                item.Click += new EventHandler(mContextMenuLocalFilesHTML_Click);
-        //                            }
-        //                            break;
-        //                        case FTP_TAB_FEED_FILE_TEXT:
-        //                            break;
-        //                        default :
-        //                            break;
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
-
-    
 
         private void mClearXsltOut_Click(object sender, EventArgs e)
         {
-            mFeedData.XsltOutput = null;
-            mTransform.DocumentText = null;
-            this.RefreshFTPTab();
+            try
+            {
+                mFeedData.XsltOutput = null;
+                mTransform.DocumentText = null;
+                this.RefreshFTPTab();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
         private void mCopyXsltOut_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(mTransform.DocumentText);
+            try
+            {
+                Clipboard.SetText(mTransform.DocumentText);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
         private void mFTPXsltOut_Click(object sender, EventArgs e)
         {
-            this.mFormTabs.SelectedTab = mFTPTab;
+            try
+            {
+                this.mFormTabs.SelectedTab = mFTPTab;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
         }
 
-
-        //private void mFeedUploadParts_MouseUp(object sender, MouseEventArgs e)
-        //{
-        //    if (FTPSelectionExists() && mFTPConnected)
-        //        mPutXMLFile.Enabled = true;
-        //    else
-        //        mPutXMLFile.Enabled = false;
-        //}
-
-        //private void mFeedUploadParts_DoubleClick(object sender, EventArgs e)
-        //{
-        //    //Select the clicked node, and the next five below it.
-        //    MouseEventArgs mouseEvent = e as MouseEventArgs;
-        //    Point p = new Point(mouseEvent.X, mouseEvent.Y);
-        //    TreeNodeAdv nextNode = mFeedUploadParts.GetNodeAt(p);
-
-        //    if (nextNode != null)
-        //    {
-        //        Node node = nextNode.Tag as Node;
-
-        //        if (node.Parent.Text == mFeedData.FeedFileName || node.Parent.Text == "Sound Files")
-        //        {
-        //            CheckState newState = CheckState.Checked;
-        //            if (node.CheckState == CheckState.Checked)
-        //                newState = CheckState.Unchecked;
-
-        //            for (int i = 0; i < 5; i++)
-        //            {
-        //                if (node != null)
-        //                    node.CheckState = newState;
-
-        //                nextNode = nextNode.NextNode;
-        //                node = nextNode.Tag as Node;
-        //            }
-        //        }
-        //    }
-        //}
         #endregion
 
         #region Nodes Changed Recursion
@@ -2485,17 +2486,24 @@ namespace FeedBuilder
         private bool mCheckStateChanging;
         void mTreeModel_NodesChanged(object sender, TreeModelEventArgs e)
         {
-            if (!mCheckStateChanging)
+            try
             {
-                mCheckStateChanging = true;
-
-                foreach (Node changedNode in e.Children)
+                if (!mCheckStateChanging)
                 {
-                    SetSubTreeCheckState(changedNode, changedNode.CheckState);
-                    RecurseParentCheckState(changedNode.Parent);
-                }
+                    mCheckStateChanging = true;
 
-                mCheckStateChanging = false;
+                    foreach (Node changedNode in e.Children)
+                    {
+                        SetSubTreeCheckState(changedNode, changedNode.CheckState);
+                        RecurseParentCheckState(changedNode.Parent);
+                    }
+
+                    mCheckStateChanging = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
             }
         }
 
