@@ -6,6 +6,7 @@ using System.Xml;
 using System.Data;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using FeedBuilder.FTP;
 
 namespace FeedBuilder
 {
@@ -72,8 +73,6 @@ namespace FeedBuilder
         private const string XPATH_ITEM_SEARCH = "//FeedInfo/FeedItem[@guid='{0}']";
         private const string XPATH_SOUND_FILE = "SoundFilePath";
 
-        private bool mTaggedForUpload;
-
         private XmlNamespaceManager mNamespaceMgr;
 
         public FeedItem(FeedData parent, XmlNamespaceManager namespaceMgr, XmlNode itemNode,
@@ -129,13 +128,27 @@ namespace FeedBuilder
             set { mFeedItemNode = value; }
         }
 
+        private int mUploadTags;
+        public bool HasFtpUploadTag(FtpUploadTags tag)
+        {
+            return ((mUploadTags & (int)tag) != 0);
+        }
+
+        public void AddFtpUploadTag(FtpUploadTags tag)
+        {
+            mUploadTags = mUploadTags | (int)tag;
+        }
+        public void RemoveUploadTag(FtpUploadTags tag)
+        {
+            mUploadTags = mUploadTags & (~((int)tag));
+        }
+
         /// <summary>
         /// If true, then this item will be saved to the temporary upload file.
         /// </summary>
         public bool TaggedForUpload
         {
-            get { return mTaggedForUpload; }
-            set { mTaggedForUpload = value; }
+            get { return mUploadTags != 0; }
         }
 
         public string Title

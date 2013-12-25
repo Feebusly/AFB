@@ -94,6 +94,7 @@
     <Compile Include="FeedValidator.cs" />
     <Compile Include="FileCacheEntry.cs" />
     <Compile Include="FTP\BytesExtension.cs" />
+    <Compile Include="FTP\FtpUploadTags.cs" />
     <Compile Include="FTP\FolderBrowser.cs">
       <SubType>UserControl</SubType>
     </Compile>

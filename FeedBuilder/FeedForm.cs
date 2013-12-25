@@ -2756,6 +2756,8 @@ namespace FeedBuilder
 
             mUploading = true;
             mFileCountForUpload = uploadFiles.Count;
+            //uncheck the nodes last, after the uploads are complete.
+            List<Node> nodesToUncheck = new List<Node>();
             foreach (Node node in uploadFiles)
             {
                 //If this is the feed file and it has an indeterminate checkmark, then
@@ -2773,6 +2775,7 @@ namespace FeedBuilder
                                 //Only save the checked nodes, and do it to a temp location
                                 path = mFeedData.SaveItunesForUpload(true);
                                 UploadFile(path);
+                                nodesToUncheck.Add(node);
                             }
                             //Delete the temporary ftp upload file
                             if (File.Exists(path))
@@ -2782,16 +2785,12 @@ namespace FeedBuilder
                             break;
                         case NodeTypes.NonItunesFeedNode:
 
-                            if (node.CheckState == CheckState.Indeterminate)
+                            if (node.CheckState != CheckState.Unchecked)
                             {
                                 //Only save the checked nodes, and do it to a temp location
                                 path = mFeedData.SaveNonItunesForUpload(true);
                                 UploadFile(path);
-                            }
-                            else if (node.CheckState == CheckState.Checked)
-                            {
-                                path = mFeedData.SaveNonItunesForUpload(true);
-                                UploadFile(path);
+                                nodesToUncheck.Add(node);
                             }
                             //Delete the temporary ftp upload file
                             if (File.Exists(path))
@@ -2801,17 +2800,19 @@ namespace FeedBuilder
                             break;
                         case NodeTypes.ImageNode:
                             UploadFile(tag.NodeObject as string);
+                            nodesToUncheck.Add(node);
                             break;
                         case NodeTypes.ContentNode:
                             UploadFile(tag.NodeObject as string);
+                            nodesToUncheck.Add(node);
                             break;
                         case NodeTypes.HtmlNode:
                             UploadFile(tag.NodeObject as string);
+                            nodesToUncheck.Add(node);
                             break;
                         default:
                             break;
                     }
-                    node.CheckState = CheckState.Unchecked;
                 }
                 catch (Exception ex)
                 {
@@ -2824,7 +2825,10 @@ namespace FeedBuilder
                     }
                 }
             }
-                
+            foreach (Node uncheckNode in nodesToUncheck)
+            {
+                uncheckNode.CheckState = CheckState.Unchecked;
+            }
             mUploading = false;
             mUploadCount = 0;
         }

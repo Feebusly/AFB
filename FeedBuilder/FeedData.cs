@@ -1425,7 +1425,7 @@ namespace FeedBuilder
                     XmlNode importNode = channel.OwnerDocument.ImportNode(item.Node, true);
                     channel.AppendChild(importNode);
                 }
-                else if (item.TaggedForUpload)
+                else if (item.HasFtpUploadTag(FTP.FtpUploadTags.NonItunesUpload))
                 {
                     XmlNode importNode = channel.OwnerDocument.ImportNode(item.Node, true);
                     channel.AppendChild(importNode);
@@ -1451,6 +1451,10 @@ namespace FeedBuilder
                     {
                         XmlTextWriter xmlWriter = new XmlTextWriter(writer);
                         transform.Transform(xpathDoc, null, xmlWriter);
+                        xml = writer.ToString();
+                        XmlDocument newXmlDoc = new XmlDocument();
+                        newXmlDoc.LoadXml(xml);
+                        xml = GetPrettyXmlText(newXmlDoc);
                     }
                 }
             }
@@ -1500,7 +1504,7 @@ namespace FeedBuilder
                     XmlNode importNode = channel.OwnerDocument.ImportNode(item.Node, true);
                     channel.AppendChild(importNode);
                 }
-                else if (item.TaggedForUpload)
+                else if (item.HasFtpUploadTag(FTP.FtpUploadTags.ITunesUpload))
                 {
                     XmlNode importNode = channel.OwnerDocument.ImportNode(item.Node, true);
                     channel.AppendChild(importNode);

@@ -617,7 +617,20 @@ namespace FeedBuilder
                 FeedItem item = tag.NodeObject as FeedItem;
                 if (item != null)
                 {
-                    item.TaggedForUpload = taggedForUpload;
+                    if (tag.NodeType == NodeTypes.ItunesItemNode)
+                    {
+                        if (taggedForUpload)
+                        { item.AddFtpUploadTag(FtpUploadTags.ITunesUpload); }
+                        else
+                        { item.RemoveUploadTag(FtpUploadTags.ITunesUpload); }
+                    }
+                    else if (tag.NodeType == NodeTypes.NonItunesItemNode)
+                    {
+                        if (taggedForUpload)
+                        { item.AddFtpUploadTag(FtpUploadTags.NonItunesUpload); }
+                        else
+                        { item.RemoveUploadTag(FtpUploadTags.NonItunesUpload); }
+                    }
                 }
             }
         }
