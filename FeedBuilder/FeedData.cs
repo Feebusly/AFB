@@ -519,7 +519,7 @@ namespace FeedBuilder
         {
             get
             {
-                string fileName = FeedFileName;
+                string fileName = FtpHtmlFileName;
                 string rootName = fileName.Split('.')[0];
 
                 return GetLocalDataPath(null) + "\\" + rootName + ".html";
@@ -576,6 +576,7 @@ namespace FeedBuilder
                         XmlNodeType.Element, "Transform", null));
                     newTransform.AppendChild(cdata);
                 }
+                this.Dirty = true;
             }
         }
 

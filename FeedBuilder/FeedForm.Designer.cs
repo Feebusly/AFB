@@ -1701,6 +1701,7 @@
             this.mXslt.Name = "mXslt";
             this.mXslt.Size = new System.Drawing.Size(826, 212);
             this.mXslt.TabIndex = 2;
+            this.mXslt.Leave += new System.EventHandler(this.mXslt_Leave);
             // 
             // splitContainer7
             // 

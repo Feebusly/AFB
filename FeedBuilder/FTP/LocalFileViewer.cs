@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Aga.Controls.Tree;
 using FeedBuilder.FTP;
 using Aga.Controls.Tree.NodeControls;
+using System.IO;
 
 namespace FeedBuilder
 {
@@ -471,7 +472,7 @@ namespace FeedBuilder
 
                     FtpNodeTag tag = changedNode.Tag as FtpNodeTag;
                     string newName = changedNode.Text;
-
+                    
                     switch (tag.NodeType)
                     {
                         case NodeTypes.ItunesFeedNode:
