@@ -103,9 +103,6 @@ namespace FeedBuilder
                 mSoundFilePath = soundFileNode.InnerText;
             }
 
-            //Populate the publication date to be "Now".
-            this.PubDate = DateTime.Now;
-
             //Add a new Guid
             this.GUID = guid;
         }

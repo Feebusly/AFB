@@ -1003,6 +1003,7 @@ namespace FeedBuilder
             itemNode = mFeedDocument.ImportNode(itemNode, true);
 
             FeedItem item = new FeedItem(this, mNamespaceMgr, itemNode, guid, null);
+            item.PubDate = DateTime.Now;
             //mFeedItems.Insert(0, item);
             return item;
         }
