@@ -575,13 +575,15 @@ Z|Zulu Time Zone|Military|UTC +00:00 hours|0</value>
 
     &lt;xsl:for-each select="//rss/channel/item"&gt;
     &lt;xsl:variable name="enclosure-url" select="enclosure/@url"/&gt;
+    &lt;xsl:variable name="enclosure-length" select="enclosure/@length"/&gt;
+    &lt;xsl:variable name="enclosure-type" select="enclosure/@type"/&gt;
     &lt;xsl:variable name="permalink" select="guid/@isPermaLink"/&gt;
 
     &lt;item&gt;
             &lt;title&gt;&lt;xsl:value-of select="title"/&gt;&lt;/title&gt;
             &lt;description&gt;&lt;xsl:value-of select="description"/&gt;&lt;/description&gt;
             &lt;link&gt;&lt;xsl:value-of select="link"/&gt;&lt;/link&gt;
-            &lt;enclosure url="{$enclosure-url}"&gt;&lt;/enclosure&gt;
+            &lt;enclosure url="{$enclosure-url}" length="{$enclosure-length}" type="{$enclosure-type}"&gt;&lt;/enclosure&gt;
             &lt;guid isPermaLink="{$permalink}"&gt;&lt;xsl:value-of select="guid"/&gt;&lt;/guid&gt;
             &lt;pubDate&gt;&lt;xsl:value-of select="pubDate"/&gt;&lt;/pubDate&gt;
     &lt;/item&gt;
