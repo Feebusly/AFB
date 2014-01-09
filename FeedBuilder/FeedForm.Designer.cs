@@ -141,15 +141,20 @@
             this.mDuplicateButton = new System.Windows.Forms.Button();
             this.mMP3GroupBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.mPathLabel = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.mBrowseMP3Button = new System.Windows.Forms.Button();
-            this.mMP3Path = new System.Windows.Forms.TextBox();
             this.mItemDuration = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.mItemPubDate = new System.Windows.Forms.DateTimePicker();
+            this.mBrowseMP3Button = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
             this.mEnclosureUrl = new System.Windows.Forms.TextBox();
+            this.mMP3Path = new System.Windows.Forms.TextBox();
+            this.mPathLabel = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.mEnclosureLength = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.mEnclosureType = new System.Windows.Forms.ComboBox();
             this.mXMLTab = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.mXmlText = new FeedBuilder.NumberedTextBoxUC();
@@ -1151,10 +1156,10 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 161F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -1221,7 +1226,7 @@
             this.label18.Dock = System.Windows.Forms.DockStyle.Right;
             this.label18.Location = new System.Drawing.Point(185, 157);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 130);
+            this.label18.Size = new System.Drawing.Size(65, 161);
             this.label18.TabIndex = 76;
             this.label18.Text = "Enclosure(s)";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1260,7 +1265,7 @@
             // mItemGUID
             // 
             this.mItemGUID.Dock = System.Windows.Forms.DockStyle.Top;
-            this.mItemGUID.Location = new System.Drawing.Point(256, 316);
+            this.mItemGUID.Location = new System.Drawing.Point(256, 347);
             this.mItemGUID.Name = "mItemGUID";
             this.mItemGUID.Size = new System.Drawing.Size(526, 20);
             this.mItemGUID.TabIndex = 14;
@@ -1270,7 +1275,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label29.Location = new System.Drawing.Point(223, 287);
+            this.label29.Location = new System.Drawing.Point(223, 318);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(27, 26);
             this.label29.TabIndex = 41;
@@ -1280,7 +1285,7 @@
             // mItemLink
             // 
             this.mItemLink.Dock = System.Windows.Forms.DockStyle.Top;
-            this.mItemLink.Location = new System.Drawing.Point(256, 290);
+            this.mItemLink.Location = new System.Drawing.Point(256, 321);
             this.mItemLink.Name = "mItemLink";
             this.mItemLink.Size = new System.Drawing.Size(526, 20);
             this.mItemLink.TabIndex = 18;
@@ -1330,7 +1335,7 @@
             // splitContainer1
             // 
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(256, 342);
+            this.splitContainer1.Location = new System.Drawing.Point(256, 373);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -1368,7 +1373,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label31.Location = new System.Drawing.Point(173, 313);
+            this.label31.Location = new System.Drawing.Point(173, 344);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(77, 26);
             this.label31.TabIndex = 79;
@@ -1380,7 +1385,7 @@
             this.panel1.Controls.Add(this.mInsertButton);
             this.panel1.Controls.Add(this.mDeleteButton);
             this.panel1.Controls.Add(this.mDuplicateButton);
-            this.panel1.Location = new System.Drawing.Point(3, 342);
+            this.panel1.Location = new System.Drawing.Point(3, 373);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(164, 33);
             this.panel1.TabIndex = 79;
@@ -1423,7 +1428,7 @@
             this.mMP3GroupBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.mMP3GroupBox.Location = new System.Drawing.Point(256, 160);
             this.mMP3GroupBox.Name = "mMP3GroupBox";
-            this.mMP3GroupBox.Size = new System.Drawing.Size(526, 124);
+            this.mMP3GroupBox.Size = new System.Drawing.Size(526, 155);
             this.mMP3GroupBox.TabIndex = 75;
             this.mMP3GroupBox.TabStop = false;
             this.mMP3GroupBox.Text = "Enclosure";
@@ -1432,51 +1437,34 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.label20, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.mPathLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label14, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.mBrowseMP3Button, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.mMP3Path, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.mItemDuration, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label32, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.mItemPubDate, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.mEnclosureUrl, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.mBrowseMP3Button, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label20, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.mEnclosureUrl, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.mMP3Path, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.mPathLabel, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label39, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label44, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.mEnclosureLength, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label45, 2, 4);
+            this.tableLayoutPanel2.Controls.Add(this.mEnclosureType, 3, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(520, 105);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(520, 133);
             this.tableLayoutPanel2.TabIndex = 80;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(57, 57);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(29, 13);
-            this.label20.TabIndex = 81;
-            this.label20.Text = "URL";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // mPathLabel
-            // 
-            this.mPathLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.mPathLabel.AutoSize = true;
-            this.mPathLabel.Location = new System.Drawing.Point(28, 32);
-            this.mPathLabel.Name = "mPathLabel";
-            this.mPathLabel.Size = new System.Drawing.Size(58, 13);
-            this.mPathLabel.TabIndex = 78;
-            this.mPathLabel.Text = "Local Path";
-            this.mPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label14
             // 
@@ -1489,34 +1477,13 @@
             this.label14.Text = "iTunes:Duration";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // mBrowseMP3Button
-            // 
-            this.mBrowseMP3Button.Enabled = false;
-            this.mBrowseMP3Button.Location = new System.Drawing.Point(92, 78);
-            this.mBrowseMP3Button.Name = "mBrowseMP3Button";
-            this.mBrowseMP3Button.Size = new System.Drawing.Size(92, 23);
-            this.mBrowseMP3Button.TabIndex = 15;
-            this.mBrowseMP3Button.Text = "Add Enclosure";
-            this.mBrowseMP3Button.UseVisualStyleBackColor = true;
-            this.mBrowseMP3Button.Click += new System.EventHandler(this.mBrowseMP3Button_Click);
-            // 
-            // mMP3Path
-            // 
-            this.tableLayoutPanel2.SetColumnSpan(this.mMP3Path, 3);
-            this.mMP3Path.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mMP3Path.Location = new System.Drawing.Point(92, 29);
-            this.mMP3Path.Name = "mMP3Path";
-            this.mMP3Path.Size = new System.Drawing.Size(425, 20);
-            this.mMP3Path.TabIndex = 13;
-            this.mMP3Path.TabStop = false;
-            // 
             // mItemDuration
             // 
             this.mItemDuration.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mItemDuration.Enabled = false;
             this.mItemDuration.Location = new System.Drawing.Point(92, 3);
             this.mItemDuration.Name = "mItemDuration";
-            this.mItemDuration.Size = new System.Drawing.Size(95, 20);
+            this.mItemDuration.Size = new System.Drawing.Size(106, 20);
             this.mItemDuration.TabIndex = 11;
             this.mItemDuration.TabStop = false;
             this.mItemDuration.Validating += new System.ComponentModel.CancelEventHandler(this.mItemDuration_Validating);
@@ -1526,7 +1493,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label32.Location = new System.Drawing.Point(262, 0);
+            this.label32.Location = new System.Drawing.Point(213, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(85, 26);
             this.label32.TabIndex = 38;
@@ -1538,21 +1505,124 @@
             this.mItemPubDate.CustomFormat = "MM/dd/yyyy HH:mm:ss";
             this.mItemPubDate.Dock = System.Windows.Forms.DockStyle.Left;
             this.mItemPubDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.mItemPubDate.Location = new System.Drawing.Point(353, 3);
+            this.mItemPubDate.Location = new System.Drawing.Point(304, 3);
             this.mItemPubDate.Name = "mItemPubDate";
             this.mItemPubDate.Size = new System.Drawing.Size(156, 20);
             this.mItemPubDate.TabIndex = 12;
             this.mItemPubDate.ValueChanged += new System.EventHandler(this.mItemPubDate_ValueChanged_1);
             // 
+            // mBrowseMP3Button
+            // 
+            this.mBrowseMP3Button.Enabled = false;
+            this.mBrowseMP3Button.Location = new System.Drawing.Point(92, 106);
+            this.mBrowseMP3Button.Name = "mBrowseMP3Button";
+            this.mBrowseMP3Button.Size = new System.Drawing.Size(106, 23);
+            this.mBrowseMP3Button.TabIndex = 999;
+            this.mBrowseMP3Button.Text = "Choose Local File";
+            this.mBrowseMP3Button.UseVisualStyleBackColor = true;
+            this.mBrowseMP3Button.Click += new System.EventHandler(this.mBrowseMP3Button_Click);
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(57, 83);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(29, 13);
+            this.label20.TabIndex = 81;
+            this.label20.Text = "URL";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // mEnclosureUrl
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.mEnclosureUrl, 3);
             this.mEnclosureUrl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mEnclosureUrl.Location = new System.Drawing.Point(92, 55);
+            this.mEnclosureUrl.Location = new System.Drawing.Point(92, 80);
             this.mEnclosureUrl.Name = "mEnclosureUrl";
             this.mEnclosureUrl.Size = new System.Drawing.Size(425, 20);
-            this.mEnclosureUrl.TabIndex = 80;
+            this.mEnclosureUrl.TabIndex = 1000;
             this.mEnclosureUrl.Leave += new System.EventHandler(this.mEnclosureUrl_Leave);
+            // 
+            // mMP3Path
+            // 
+            this.tableLayoutPanel2.SetColumnSpan(this.mMP3Path, 3);
+            this.mMP3Path.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mMP3Path.Location = new System.Drawing.Point(92, 55);
+            this.mMP3Path.Name = "mMP3Path";
+            this.mMP3Path.Size = new System.Drawing.Size(425, 20);
+            this.mMP3Path.TabIndex = 1001;
+            this.mMP3Path.Leave += new System.EventHandler(this.mMP3Path_Leave);
+            // 
+            // mPathLabel
+            // 
+            this.mPathLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.mPathLabel.AutoSize = true;
+            this.mPathLabel.Location = new System.Drawing.Point(28, 58);
+            this.mPathLabel.Name = "mPathLabel";
+            this.mPathLabel.Size = new System.Drawing.Size(58, 13);
+            this.mPathLabel.TabIndex = 78;
+            this.mPathLabel.Text = "Local Path";
+            this.mPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label39
+            // 
+            this.label39.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 32);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(80, 13);
+            this.label39.TabIndex = 1002;
+            this.label39.Text = "File Size (bytes)";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label44
+            // 
+            this.label44.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(248, 32);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(50, 13);
+            this.label44.TabIndex = 1003;
+            this.label44.Text = "File Type";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // mEnclosureLength
+            // 
+            this.mEnclosureLength.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.mEnclosureLength.Location = new System.Drawing.Point(92, 29);
+            this.mEnclosureLength.Name = "mEnclosureLength";
+            this.mEnclosureLength.Size = new System.Drawing.Size(106, 20);
+            this.mEnclosureLength.TabIndex = 15;
+            this.mEnclosureLength.Leave += new System.EventHandler(this.mEnclosureLength_Leave);
+            // 
+            // label45
+            // 
+            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label45.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.label45, 2);
+            this.label45.Location = new System.Drawing.Point(204, 111);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(196, 13);
+            this.label45.TabIndex = 1004;
+            this.label45.Text = "(Reads MP3 Duration, Size, Type, Path)";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // mEnclosureType
+            // 
+            this.mEnclosureType.FormattingEnabled = true;
+            this.mEnclosureType.Items.AddRange(new object[] {
+            "mp3:  audio/mpeg",
+            "m4a:  audio/x-m4a",
+            "mp4:  video/mp4",
+            "m4v:  video/x-m4v",
+            "mov:  video/quicktime",
+            "pdf:    application/pdf",
+            "epub: document/x-epub"});
+            this.mEnclosureType.Location = new System.Drawing.Point(304, 29);
+            this.mEnclosureType.Name = "mEnclosureType";
+            this.mEnclosureType.Size = new System.Drawing.Size(156, 21);
+            this.mEnclosureType.TabIndex = 1005;
+            this.mEnclosureType.SelectedIndexChanged += new System.EventHandler(this.mEnclosureType_SelectedIndexChanged);
             // 
             // mXMLTab
             // 
@@ -2190,7 +2260,6 @@
         private System.Windows.Forms.Button mDuplicateButton;
         private System.Windows.Forms.GroupBox mMP3GroupBox;
         private System.Windows.Forms.Label mPathLabel;
-        private System.Windows.Forms.TextBox mMP3Path;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox mItemDuration;
@@ -2301,7 +2370,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox mEnclosureUrl;
         private System.Windows.Forms.Button mValidate;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox mValidationURL;
@@ -2335,6 +2403,13 @@
         private System.Windows.Forms.ToolStripMenuItem removeFromListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openInExplorerToolStripMenuItem;
         private System.Windows.Forms.TextBox mItemGUID;
+        private System.Windows.Forms.TextBox mEnclosureLength;
+        private System.Windows.Forms.TextBox mEnclosureUrl;
+        private System.Windows.Forms.TextBox mMP3Path;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.ComboBox mEnclosureType;
        
     }
 }

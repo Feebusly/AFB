@@ -652,6 +652,8 @@ namespace FeedBuilder
                 mItemDescription.Text = selectedNode.Description;
                 mItemLink.Text = selectedNode.Link;
                 mEnclosureUrl.Text = selectedNode.EnclosureURL;
+                mEnclosureLength.Text = selectedNode.EnclosureLength.ToString();
+                mEnclosureType.Text = SwitchEnclosureTypeString(mSelectedFeedItem.EnclosureType);
 
                 if (selectedNode.HasPubDate())
                 {
@@ -911,7 +913,7 @@ namespace FeedBuilder
                 MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
             }
         }
-
+        
         private void mItemAuthor_Leave(object sender, EventArgs e)
         {
             try
@@ -1076,11 +1078,100 @@ namespace FeedBuilder
             RefreshAfterChange();
         }
 
+        private void mMP3Path_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                mSelectedFeedItem.EnclosurePath = mMP3Path.Text;
+                RefreshAfterChange();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
+        }
+
         private void mEnclosureUrl_Leave(object sender, EventArgs e)
         {
-            mSelectedFeedItem.EnclosureURL = mEnclosureUrl.Text;
+            try
+            {
+                mSelectedFeedItem.EnclosureURL = mEnclosureUrl.Text;
+                RefreshAfterChange();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
+        }
+
+        private void mEnclosureLength_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                long enclosureLength = 0;
+                bool parsed = long.TryParse(mEnclosureLength.Text, out enclosureLength);
+                if (!parsed)
+                { MessageBox.Show("Numeric values only, please."); }
+
+                mSelectedFeedItem.EnclosureLength = enclosureLength;
+                RefreshAfterChange();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + System.Environment.NewLine + ex.StackTrace);
+            }
+        }
+
+        private void mEnclosureType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string enclosureType = mEnclosureType.SelectedItem.ToString();
+            mSelectedFeedItem.EnclosureType = SwitchEnclosureTypeString(enclosureType);
             RefreshAfterChange();
         }
+
+        /// <summary>
+        /// Removes leading filetype characters or inserts them.  For example, the string
+        /// "mp3: audio/mpeg" will be converted to "audio/mpeg" and the string
+        /// "audio/mpeg" will be converted to "mp3: audio/mpeg".
+        /// </summary>
+        private string SwitchEnclosureTypeString(string input)
+        {
+            if (!input.Contains(':'))
+            {
+                switch (input)
+                {
+                    case "audio/mpeg":
+                        input = "mp3:  audio/mpeg";
+                        break;
+                    case "audio/x-m4a":
+                        input = "m4a:  audio/x-m4a";
+                        break;
+                    case "video/mp4":
+                        input = "mp4:  video/mp4";
+                        break;
+                    case "video/x-m4v":
+                        input = "m4v:  video/x-m4v";
+                        break;
+                    case "video/quicktime":
+                        input = "mov:  video/quicktime";
+                        break;
+                    case "application/pdf":
+                        input = "pdf:    application/pdf";
+                        break;
+                    case "document/x-epub":
+                        input = "epub: document/x-epub";
+                        break;
+                }
+            }
+            else
+            {
+                string[] pathSplit = input.Split(new char[] { ':', ' ' },
+                            StringSplitOptions.RemoveEmptyEntries);
+                input = pathSplit[pathSplit.Length - 1];
+            }
+            return input;
+        }
+
         #endregion
 
         #region Tool Strip Menu Item Events
@@ -2941,9 +3032,8 @@ namespace FeedBuilder
 
         #endregion
 
-        private void mXslt_Leave_1(object sender, EventArgs e)
-        {
 
-        }
+
+
     }
 }

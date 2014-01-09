@@ -646,6 +646,34 @@ namespace FeedBuilder
                         soundFileNode.InnerText = mSoundFilePath;
                         localNode.AppendChild(soundFileNode);
                     }
+
+                    string[] pathSplit = value.Split(new char[] { '.' },
+                        StringSplitOptions.RemoveEmptyEntries);
+                    string extenstion = pathSplit[pathSplit.Length - 1];
+                    switch (extenstion)
+                    {
+                        case "mp3":
+                            EnclosureType = "audio/mpeg";
+                            break;
+                        case "m4a":
+                            EnclosureType = "audio/x-m4a";
+                            break;
+                        case "mp4":
+                            EnclosureType = "video/mp4";
+                            break;
+                        case "m4v":
+                            EnclosureType = "video/x-m4v";
+                            break;
+                        case "mov":
+                            EnclosureType = "video/quicktime";
+                            break;
+                        case "pdf":
+                            EnclosureType = "application/pdf";
+                            break;
+                        case "epub":
+                            EnclosureType = "document/x-epub";
+                            break;
+                    }
                     mParent.Dirty = true;
                 }
             }
