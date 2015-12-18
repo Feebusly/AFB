@@ -191,7 +191,7 @@ namespace MWControlSuite
 	/// </summary>
 	public class MWTreeView : System.Windows.Forms.TreeView
 	{
-		#region Variables
+		#region Variables and other stuff
 
 		#region Property Variables
 
