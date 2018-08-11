@@ -808,6 +808,7 @@ namespace FeedBuilder
                         //IAudioFile mp3 = AudioFile.Create(fileChooser.FileName, true);
                         int fileSize = (int)(new FileInfo(fileChooser.FileName)).Length;
                         currentItem.EnclosureLength = fileSize;
+                        mEnclosureLength.Text = fileSize.ToString();
 
                         //Duration
                         //int fileTime = (int)mp3.TotalSeconds;
@@ -827,6 +828,27 @@ namespace FeedBuilder
                         currentItem.EnclosurePath = fileChooser.FileName;
                         mMP3Path.Text = fileChooser.FileName;
 
+                        //URL
+                        if (mEnclosureUrl.Text != null)
+                        {
+                            string fileName = fileChooser.FileName.Split('/', '\\').Last<string>();
+                            string url = mEnclosureUrl.Text;
+                            string[] urlParts = url.Split('/', '\\');
+                            if (urlParts[urlParts.Length - 1].Contains("."))
+                            {
+                                url = url.Replace(urlParts[urlParts.Length - 1], fileName);
+                            }
+                            else
+                            {
+                                string divider = (url.EndsWith("/")) ? "" : "/";
+                                url = url + divider + fileName;
+                            }
+                            mEnclosureUrl.Text = url;
+                        }
+                        else
+                        {
+                            mEnclosureUrl.Text = "http://WWW/" + fileChooser.FileName;
+                        }
                         mItemPubDate.Enabled = true;
                     }
                 }
@@ -1834,7 +1856,10 @@ namespace FeedBuilder
                         {
                             soundFilePath = LocateSoundFile(folderPath, fileName);
                         }
-                        item.EnclosurePath = soundFilePath;
+                        if (soundFilePath != null)
+                        {
+                            item.EnclosurePath = soundFilePath;
+                        }
                     }
                 }
                 RefreshForm();
@@ -3030,10 +3055,10 @@ namespace FeedBuilder
             }
         }
 
+
+
+
         #endregion
-
-
-
 
     }
 }
